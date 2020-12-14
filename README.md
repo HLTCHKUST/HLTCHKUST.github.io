@@ -1,8 +1,16 @@
-# Before anything
+# Installation
 
-1. `git clone https://github.com/HLTCHKUST/hltchkust.github.io.git`
-2. `git fetch`
-3. `git checkout source`
+```bash
+git clone https://github.com/HLTCHKUST/hltchkust.github.io.git
+git fetch
+git checkout source
+```
+
+Make sure you have [Ruby](https://www.ruby-lang.org/en/downloads/) and [Bundler](https://bundler.io/) installed on your system (hint: for ease of managing ruby gems, consider using [rbenv](https://github.com/rbenv/rbenv)), then run
+
+```bash
+bundle install
+```
 
 # To add new blog
 
@@ -28,10 +36,7 @@ Wait a few seconds, and refresh!
 
 # For local development
 
-Make sure you have [Ruby](https://www.ruby-lang.org/en/downloads/) and [Bundler](https://bundler.io/) installed on your system (hint: for ease of managing ruby gems, consider using [rbenv](https://github.com/rbenv/rbenv))
-
 ```bash
-bundle install
 bundle exec jekyll serve
 ```
 
