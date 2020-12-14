@@ -352,6 +352,7 @@ footer.sticky-bottom {
         a.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
+          border-radius: 3px;
           padding-left: 1rem;
           padding-right: 1rem;
           padding-top: 0.25rem;
@@ -360,6 +361,12 @@ footer.sticky-bottom {
             color: var(--global-theme-color);
             border-color: var(--global-theme-color);
           }
+        }
+        a.cus-btn{
+          font-size: 12px;
+          line-height: 1em;
+          padding: 6px 7px;
+          margin: 8px 4px 12px 0;
         }
       }
       .hidden {
