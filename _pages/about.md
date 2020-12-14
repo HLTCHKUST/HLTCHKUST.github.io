@@ -2,23 +2,20 @@
 layout: about
 title: about
 permalink: /
-description: <a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.
+description: Centre for Artificial Intelligence Research
 
 profile:
-  align: right
-  image: prof_pic.jpg
-  address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+  align:
+  image:
+  address:
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+social: false  # includes social icons at the bottom of the page
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com){:target="\_blank"}. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+The Centre for Artificial Intelligence Research (`CAiRE`) is established to facilitate the interdisciplinary research, education, and knowledge transfer in all aspects of artificial intelligence (`AI`) with faculty and students from all four schools at HKUST, and for the benefit of humanity and society.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+After decades of research and development, AI is poised to disrupt every industry in every walk of human life, from the financial industry, the health and medical industry, the retail industry, the legal industry, the creative industry, journalism, to the future of work and even human rights. We have seen significant progress in AI through the combined advancement of GPU platforms, availability of Big Data, and machine learning algorithms like neural networks. AI impacts humans directly and will continue to do so in our future. Its potential impact is immeasurable and the consequences dire if we do not start to focus on the research and development of AI for the benefit of humans and society.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/){:target="\_blank"} and [Academicons](https://jpswalsh.github.io/academicons/){:target="\_blank"}, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+The Hong Kong University of Science & Technology has a core group of engineering faculty members with research focus on speech, natural language processing, computer vision, machine learning, and data analytics. Our science faculty work on the mathematics of machine learning, and application areas such as health and medicine. Currently the schools of engineering, science, and business & management are collaborating on using AI for ethical Fintech. Our Division of Social Science and Humanities have experts on social impacts and humanities. We have extensive theoretical and applied research in different areas of AI. In addition to research, we work in close collaborations with top international industry players in AI applications. Meanwhile, we need to design ethical principles of AI to take into account the culture and philosophy of Asian societies so that companies are motivated to adhere and aspire to such principles. To achieve this, international exchange of ideas in AI should extend beyond the purely technical to discussions of social impact and ethical practices.
