@@ -9,6 +9,8 @@
 @inproceedings{wilie-etal-2020-indonlu,
     selected = {true},
     abbr = {AACL},
+    code = {https://github.com/indobenchmark/indonlu},
+    slides = {https://docs.google.com/presentation/d/1-qrwLNkFApokkeqISzRxDKSHL_5FHC6IWokPolkvt3Q/edit?usp=sharing},
     title = "{I}ndo{NLU}: Benchmark and Resources for Evaluating {I}ndonesian Natural Language Understanding",
     author = "Wilie, Bryan  and
       Vincentio, Karissa  and
@@ -28,12 +30,13 @@
     publisher = "Association for Computational Linguistics",
     url = "https://www.aclweb.org/anthology/2020.aacl-main.85",
     pages = "843--857",
-    abstract = "Although Indonesian is known to be the fourth most frequently used language over the internet, the research progress on this language in natural language processing (NLP) is slow-moving due to a lack of available resources. In response, we introduce the first-ever vast resource for training, evaluation, and benchmarking on Indonesian natural language understanding (IndoNLU) tasks. IndoNLU includes twelve tasks, ranging from single sentence classification to pair-sentences sequence labeling with different levels of complexity. The datasets for the tasks lie in different domains and styles to ensure task diversity. We also provide a set of Indonesian pre-trained models (IndoBERT) trained from a large and clean Indonesian dataset (Indo4B) collected from publicly available sources such as social media texts, blogs, news, and websites. We release baseline models for all twelve tasks, as well as the framework for benchmark evaluation, thus enabling everyone to benchmark their system performances.",
+    abstract = "Although Indonesian is known to be the fourth most frequently used language over the internet, the research progress on this language in natural language processing (NLP) is slow-moving due to a lack of available resources. In response, we introduce the first-ever vast resource for training, evaluation, and benchmarking on Indonesian natural language understanding (IndoNLU) tasks. IndoNLU includes twelve tasks, ranging from single sentence classification to pair-sentences sequence labeling with different levels of complexity. The datasets for the tasks lie in different domains and styles to ensure task diversity. We also provide a set of Indonesian pre-trained models (IndoBERT) trained from a large and clean Indonesian dataset (Indo4B) collected from publicly available sources such as social media texts, blogs, news, and websites. We release baseline models for all twelve tasks, as well as the framework for benchmark evaluation, thus enabling everyone to benchmark their system performances."
 }
 
 @inproceedings{dai-etal-2020-modality,
     selected = {true},
     abbr = {AACL},
+    code = {https://github.com/wenliangdai/Modality-Transferable-MER},
     title = "Modality-Transferable Emotion Embeddings for Low-Resource Multimodal Emotion Recognition",
     author = "Dai, Wenliang  and
       Liu, Zihan  and
@@ -74,12 +77,14 @@
   url       = {https://www.aclweb.org/anthology/2020.emnlp-main.226/},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/emnlp/XuPSPFAC20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Existing pre-trained large language models have shown unparalleled generative capabilities. However, they are not controllable. In this paper, we propose MEGATRON-CNTRL, a novel framework that uses large-scale language models and adds control to text generation by incorporating an external knowledge base. Our framework consists of a keyword predictor, a knowledge retriever, a contextual knowledge ranker, and a conditional text generator. As we do not have access to groundtruth supervision for the knowledge ranker, we make use of weak supervision from sentence embedding. The empirical results show that our model generates more fluent, consistent, and coherent stories with less repetition and higher diversity compared to prior work on the ROC story dataset. We showcase the controllability of our model by replacing the keywords used to generate stories and re-running the generation process. Human evaluation results show that 77.5% of these stories are successfully controlled by the new keywords. Furthermore, by scaling our model from 124 million to 8.3 billion parameters we demonstrate that larger models improve both the quality of generation (from 74.5% to 93.0% for consistency) and controllability (from 77.5% to 91.5%).}
 }
 
 @inproceedings{DBLP:conf/emnlp/LiuWXLF20,
   selected ={true},
   abbr = {EMNLP},
+  code = {https://github.com/zliucr/crosslingual-slu},
   author    = {Zihan Liu and
                Genta Indra Winata and
                Peng Xu and
@@ -99,12 +104,14 @@
   url       = {https://www.aclweb.org/anthology/2020.emnlp-main.587/},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/emnlp/LiuWXLF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Despite the promising results of current crosslingual models for spoken language understanding systems, they still suffer from imperfect cross-lingual representation alignments between the source and target languages, which makes the performance sub-optimal. To cope with this issue, we propose a regularization approach to further align word-level and sentence-level representations across languages without any external resource. First, we regularize the representation of user utterances based on their corresponding labels. Second, we regularize the latent variable model (Liu et al., 2019a) by leveraging adversarial training to disentangle the latent variables. Experiments on the cross-lingual spoken language understanding task show that our model outperforms current state-of-the-art methods in both few-shot and zero-shot scenarios, and our model, trained on a few-shot setting with only 3% of the target language training data, achieves comparable performance to the supervised training with all the training data.}
 }
 
 @inproceedings{DBLP:conf/emnlp/LinMWF20,
   selected ={true},
   abbr = {EMNLP},
+  code = {https://github.com/zlinao/MinTL},
   author    = {Zhaojiang Lin and
                Andrea Madotto and
                Genta Indra Winata and
@@ -122,7 +129,8 @@
   url       = {https://www.aclweb.org/anthology/2020.emnlp-main.273/},
   timestamp = {Thu, 19 Nov 2020 16:13:16 +0100},
   biburl    = {https://dblp.org/rec/conf/emnlp/LinMWF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {In this paper, we propose Minimalist Transfer Learning (MinTL) to simplify the system design process of task-oriented dialogue systems and alleviate the over-dependency on annotated data. MinTL is a simple yet effective transfer learning framework, which allows us to plug-and-play pre-trained seq2seq models, and jointly learn dialogue state tracking and dialogue response generation. Unlike previous approaches, which use a copy mechanism to “carryover” the old dialogue states to the new one, we introduce Levenshtein belief spans (Lev), that allows efficient dialogue state tracking with a minimal generation length. We instantiate our learning framework with two pretrained backbones: T5 (Raffel et al., 2019) and BART (Lewis et al., 2019), and evaluate them on MultiWOZ. Extensive experiments demonstrate that: 1) our systems establish new state-of-the-art results on end-to-end response generation, 2) MinTL-based systems are more robust than baseline methods in the low resource setting, and they achieve competitive results with only 20% training data, and 3) Lev greatly improves the inference efficiency}
 }
 
 
@@ -130,6 +138,7 @@
 @inproceedings{DBLP:conf/emnlp/Su0DJYF20,
   selected ={true},
   abbr = {Findings},
+  code = {https://github.com/HLTCHKUST/MulQG},
   author    = {Dan Su and
                Yan Xu and
                Wenliang Dai and
@@ -149,12 +158,14 @@
   url       = {https://www.aclweb.org/anthology/2020.findings-emnlp.416/},
   timestamp = {Thu, 12 Nov 2020 17:18:16 +0100},
   biburl    = {https://dblp.org/rec/conf/emnlp/Su0DJYF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Multi-hop Question Generation (QG) aims to generate answer-related questions by aggregating and reasoning over multiple scattered evidence from different paragraphs. It is a more challenging yet under-explored task compared to conventional single-hop QG, where the questions are generated from the sentence containing the answer or nearby sentences in the same paragraph without complex reasoning. To address the additional challenges in multi-hop QG, we propose Multi-Hop Encoding Fusion Network for Question Generation (MulQG), which does context encoding in multiple hops with Graph Convolutional Network and encoding fusion via an Encoder Reasoning Gate. To the best of our knowledge, we are the first to tackle the challenge of multi-hop reasoning over paragraphs without any sentence-level information. Empirical results on HotpotQA dataset demonstrate the effectiveness of our method, in comparison with baselines on automatic evaluation metrics. Moreover, from the human evaluation, our proposed model is able to generate fluent questions with high completeness and outperforms the strongest baseline by 20.8% in the multihop evaluation. The code is publicly available at https://github.com/HLTCHKUST/MulQG.}
 }
 
 @inproceedings{DBLP:conf/emnlp/MadottoILDF20,
   selected ={true},
   abbr = {Findings},
+  code = {https://github.com/andreamad8/PPCM},
   author    = {Andrea Madotto and
                Etsuko Ishii and
                Zhaojiang Lin and
@@ -173,13 +184,15 @@
   url       = {https://www.aclweb.org/anthology/2020.findings-emnlp.219/},
   timestamp = {Thu, 12 Nov 2020 17:18:16 +0100},
   biburl    = {https://dblp.org/rec/conf/emnlp/MadottoILDF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {There has been considerable progress made towards conversational models that generate coherent and fluent responses; however, this often involves training large language models on large dialogue datasets, such as Reddit. These large conversational models provide little control over the generated responses, and this control is further limited in the absence of annotated conversational datasets for attribute specific generation that can be used for fine-tuning the model. In this paper, we first propose and evaluate plug-and-play methods for controllable response generation, which does not require dialogue specific datasets and does not rely on fine-tuning a large model. While effective, the decoding procedure induces considerable computational overhead, rendering the conversational model unsuitable for interactive usage. To overcome this, we introduce an approach that does not require further computation at decoding time, while also does not require any fine-tuning of a large language model. We demonstrate, through extensive automatic and human evaluation, a high degree of control over the generated conversational responses with regard to multiple desired attributes, while being fluent.}
 }
 
 
 @inproceedings{DBLP:conf/emnlp/LinMF20,
   selected ={true},
   abbr = {Findings},
+  code = {https://github.com/zlinao/VGLM},
   author    = {Zhaojiang Lin and
                Andrea Madotto and
                Pascale Fung},
@@ -197,7 +210,8 @@
   url       = {https://www.aclweb.org/anthology/2020.findings-emnlp.41/},
   timestamp = {Thu, 12 Nov 2020 17:18:15 +0100},
   biburl    = {https://dblp.org/rec/conf/emnlp/LinMF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Fine-tuning pre-trained generative language models to down-stream language generation tasks has shown promising results. However, this comes with the cost of having a single, large model for each task, which is not ideal in low-memory/power scenarios (e.g., mobile). In this paper, we propose an effective way to fine-tune multiple down-stream generation tasks simultaneously using a single, large pretrained model. The experiments on five diverse language generation tasks show that by just using an additional 2-3% parameters for each task, our model can maintain or even improve the performance of fine-tuning the whole model.}
 }
 
 % EMNLP Workshop 2020
@@ -224,6 +238,7 @@
 % AAAI 2020
 @inproceedings{DBLP:conf/aaai/LiuWLXF20,
   abbr = {AAAI},
+  code = {https://github.com/zliucr/mixed-language-training},
   author    = {Zihan Liu and
                Genta Indra Winata and
                Zhaojiang Lin and
@@ -242,7 +257,8 @@
   url       = {https://aaai.org/ojs/index.php/AAAI/article/view/6362},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/aaai/LiuWLXF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Recently, data-driven task-oriented dialogue systems have achieved promising performance in English. However, developing dialogue systems that support low-resource languages remains a long-standing challenge due to the absence of highquality data. In order to circumvent the expensive and timeconsuming data collection, we introduce Attention-Informed Mixed-Language Training (MLT), a novel zero-shot adaptation method for cross-lingual task-oriented dialogue systems. It leverages very few task-related parallel word pairs to generate code-switching sentences for learning the interlingual semantics across languages. Instead of manually selecting the word pairs, we propose to extract source words based on the scores computed by the attention layer of a trained English task-related model and then generate word pairs using existing bilingual dictionaries. Furthermore, intensive experiments with different cross-lingual embeddings demonstrate the effectiveness of our approach. Finally, with very few word pairs, our model achieves significant zero-shot adaptation performance improvements in both cross-lingual dialogue state tracking and natural language understanding (i.e., intent detection and slot filling) tasks compared to the current state-of-the-art approaches, which utilize a much larger amount of bilingual data.}
 }
 
 @inproceedings{DBLP:conf/aaai/KimF20,
@@ -262,7 +278,8 @@
   url       = {https://aaai.org/ojs/index.php/AAAI/article/view/7194},
   timestamp = {Tue, 02 Jun 2020 20:00:35 +0200},
   biburl    = {https://dblp.org/rec/conf/aaai/KimF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Multiple-Choice Question Answering (MCQA) is the most challenging area of Machine Reading Comprehension (MRC) and Question Answering (QA), since it not only requires natural language understanding, but also problem-solving techniques. We propose a novel method, Wrong Answer Ensemble (WAE), which can be applied to various MCQA tasks easily. To improve performance of MCQA tasks, humans intuitively exclude unlikely options to solve the MCQA problem. Mimicking this strategy, we train our model with the wrong answer loss and correct answer loss to generalize the features of our model, and exclude likely but wrong options. An experiment on a dialogue-based examination dataset shows the effectiveness of our approach. Our method improves the results on a fine-tuned transformer by 2.7%.}
 }
 
 @inproceedings{DBLP:conf/aaai/LinXWSLSF20,
@@ -286,7 +303,8 @@
   url       = {https://aaai.org/ojs/index.php/AAAI/article/view/7098},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/aaai/LinXWSLSF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {In this paper, we present an end-to-end empathetic conversation agent, CAiRE. Our system adapts the learning approach from TransferTransfo (Wolf et al., 2019) which fine-tunes a large-scale pre-trained language model with multiple objectives: response language modeling, response prediction, and dialogue emotion detection. We evaluate our model on the recently proposed empathetic-dialogues dataset (Rashkin et al., 2019). Our experiment results show that CAiRE achieves state-of-theart performance on dialogue emotion detection and empathetic response generation.}
 }
 
 @inproceedings{DBLP:conf/icassp/ShinXMF20,
@@ -305,12 +323,14 @@
   doi       = {10.1109/ICASSP40776.2020.9054379},
   timestamp = {Fri, 27 Nov 2020 10:48:06 +0100},
   biburl    = {https://dblp.org/rec/conf/icassp/ShinXMF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {An important aspect of human conversation difficult for machines is conversing with empathy, which is to understand the user’s emotion and respond appropriately. Recent neural conversation models that attempted to generate empathetic responses either focused on conditioning the output to a given emotion, or incorporating the current user emotional state. However, these approaches do not factor in how the user would feel towards the generated response. Hence, in this paper, we propose Sentiment Look-ahead, which is a novel perspective for empathy that models the future user emotional state. In short, Sentiment Look-ahead is a reward function under a reinforcement learning framework that provides a higher reward to the generative model when the generated utterance improves the user’s sentiment. We implement and evaluate three different possible implementations of sentiment look-ahead and empirically show that our proposed approach can generate significantly more empathetic, relevant, and fluent responses than other competitive baselines such as multitask learning.}
 }
 
 % ACL 2020
 @inproceedings{DBLP:conf/acl/WinataCLLXF20,
   abbr = {ACL},
+  code = {https://github.com/audioku/meta-transfer-learning},
   author    = {Genta Indra Winata and
                Samuel Cahyawijaya and
                Zhaojiang Lin and
@@ -330,11 +350,13 @@
   url       = {https://www.aclweb.org/anthology/2020.acl-main.348/},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/acl/WinataCLLXF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {An increasing number of people in the world today speak a mixed-language as a result of being multilingual. However, building a speech recognition system for code-switching remains difficult due to the availability of limited resources and the expense and significant effort required to collect mixed-language data. We therefore propose a new learning method, meta-transfer learning, to transfer learn on a code-switched speech recognition system in a low-resource setting by judiciously extracting information from high-resource monolingual datasets. Our model learns to recognize individual languages, and transfer them so as to better recognize mixed-language speech by conditioning the optimization on the code-switching data. Based on experimental results, our model outperforms existing baselines on speech recognition and language modeling tasks, and is faster to converge.}
 }
 
 @inproceedings{DBLP:conf/acl/LiuWXF20,
   abbr = {ACL},
+  code = {https: //github.com/zliucr/coach},
   author    = {Zihan Liu and
                Genta Indra Winata and
                Peng Xu and
@@ -352,7 +374,8 @@
   url       = {https://www.aclweb.org/anthology/2020.acl-main.3/},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/acl/LiuWXF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {As an essential task in task-oriented dialog systems, slot filling requires extensive training data in a certain domain. However, such data are not always available. Hence, cross-domain slot filling has naturally arisen to cope with this data scarcity problem. In this paper, we propose a Coarse-to-fine approach (Coach) for cross-domain slot filling. Our model first learns the general pattern of slot entities by detecting whether the tokens are slot entities or not. It then predicts the specific types for the slot entities. In addition, we propose a template regularization approach to improve the adaptation robustness by regularizing the representation of utterances based on utterance templates. Experimental results show that our model significantly outperforms state-of-theart approaches in slot filling. Furthermore, our model can also be applied to the cross-domain named entity recognition task, and it achieves better adaptation performance than other existing baselines. The code is available at https: //github.com/zliucr/coach.}
 }
 
 @inproceedings{DBLP:conf/rep4nlp/LiuWF20,
@@ -377,12 +400,14 @@
   url       = {https://www.aclweb.org/anthology/2020.repl4nlp-1.1/},
   timestamp = {Tue, 30 Jun 2020 17:15:43 +0200},
   biburl    = {https://dblp.org/rec/conf/rep4nlp/LiuWF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Existing models for cross-domain named entity recognition (NER) rely on numerous unlabeled corpus or labeled NER training data in target domains. However, collecting data for low-resource target domains is not only expensive but also time-consuming. Hence, we propose a cross-domain NER model that does not use any external resources. We first introduce a Multi-Task Learning (MTL) by adding a new objective function to detect whether tokens are named entities or not. We then introduce a framework called Mixture of Entity Experts (MoEE) to improve the robustness for zero-resource domain adaptation. Finally, experimental results show that our model outperforms strong unsupervised cross-domain sequence labeling models, and the performance of our model is close to that of the state-of-the-art model which leverages extensive resources.}
 }
 
 % INTERSPEECH 2020
 @inproceedings{DBLP:conf/interspeech/WinataCLLMXF20,
   abbr = {INTERSPEECH},
+  code = {https://github.com/audioku/cross-accentmaml-asr},
   author    = {Genta Indra Winata and
                Samuel Cahyawijaya and
                Zihan Liu and
@@ -404,7 +429,8 @@
   doi       = {10.21437/Interspeech.2020-0045},
   timestamp = {Fri, 27 Nov 2020 10:48:06 +0100},
   biburl    = {https://dblp.org/rec/conf/interspeech/WinataCLLMXF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Local dialects influence people to pronounce words of the same language differently from each other. The great variability and complex characteristics of accents create a major challenge for training a robust and accent-agnostic automatic speech recognition (ASR) system. In this paper, we introduce a cross-accented English speech recognition task as a benchmark for measuring the ability of the model to adapt to unseen accents using the existing CommonVoice corpus. We also propose an accent-agnostic approach that extends the model-agnostic metalearning (MAML) algorithm for fast adaptation to unseen accents. Our approach significantly outperforms joint training in both zero-shot, few-shot, and all-shot in the mixed-region and cross-region settings in terms of word error rate}
 }
 
 % ICASSP 2020
@@ -426,7 +452,8 @@
   doi       = {10.1109/ICASSP40776.2020.9053878},
   timestamp = {Thu, 23 Jul 2020 16:20:10 +0200},
   biburl    = {https://dblp.org/rec/conf/icassp/WinataCLLF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Highly performing deep neural networks come at the cost of computational complexity that limits their practicality for deployment on portable devices. We propose the low-rank transformer (LRT), a memory-efficient and fast neural architecture that significantly reduces the parameters and boosts the speed of training and inference for end-to-end speech recognition. Our approach reduces the number of parameters of the network by more than 50% and speeds up the inference time by around 1.35x compared to the baseline transformer model. The experiments show that our LRT model generalizes better and yields lower error rates on both validation and test sets compared to an uncompressed transformer model. The LRT model outperforms those from existing works on several datasets in an end-to-end setting without using an external language model or acoustic data.}
 }
 
 
@@ -444,12 +471,14 @@
   doi       = {10.1109/ICASSP40776.2020.9053979},
   timestamp = {Sat, 05 Sep 2020 18:07:12 +0200},
   biburl    = {https://dblp.org/rec/conf/icassp/SuF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {While question answering (QA) systems have witnessed great breakthroughs in reading comprehension (RC) tasks, spoken question answering (SQA) is still a much less investigated area. Previous work shows that existing SQA systems are limited by catastrophic impact of automatic speech recognition (ASR) errors [1] and the lack of large-scale real SQA datasets [2]. In this paper, we propose using contextualized word representations to mitigate the effects of ASR errors and pretraining on existing textual QA datasets to mitigate the data scarcity issue. New state-of-the-art results have been achieved using contextualized word representations on both the artificially synthesised and real SQA benchmark data sets, with 21.5 EM/18.96 F1 score improvement over the sub-word unit based baseline on the Spoken-SQuAD [1] data, and 13.11 EM/10.99 F1 score improvement on the ODSQA data [2]. By further fine-tuning pre-trained models with existing large scaled textual QA data, we obtained 38.12 EM/34.1 F1 improvement over the baseline of fine-tuned only on small sized real SQA data.}
 }
 
 % LREC 2020
 @inproceedings{DBLP:conf/lrec/WuMLXF20,
   abbr = {LREC},
+  code = {https://github.com/jasonwu0731/GettingToKnowYou},
   author    = {Chien{-}Sheng Wu and
                Andrea Madotto and
                Zhaojiang Lin and
@@ -478,12 +507,14 @@
   url       = {https://www.aclweb.org/anthology/2020.lrec-1.73/},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/lrec/WuMLXF20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {User attributes provide rich and useful information for user understanding, yet structured and easy-to-use attributes are often sparsely populated. In this paper, we leverage dialogues with conversational agents, which contain strong suggestions of user information, to automatically extract user attributes. Since no existing dataset is available for this purpose, we apply distant supervision to train our proposed two-stage attribute extractor, which surpasses several retrieval and generation baselines on human evaluation. Meanwhile, we discuss potential applications (e.g., personalized recommendation and dialogue systems) of such extracted user attributes, and point out current limitations to cast light on future work.}
 }
 
 % SEMEVAL 2020
 @inproceedings{dai-etal-2020-kungfupanda,
     abbr = {Workshop},
+    code = {https://github.com/wenliangdai/multi-task-offensive-language-detection},
     title = "Kungfupanda at {S}em{E}val-2020 Task 12: {BERT}-Based Multi-{T}ask{L}earning for Offensive Language Detection",
     author = "Dai, Wenliang  and
       Yu, Tiezheng  and
@@ -513,11 +544,13 @@
   eprint    = {2001.11164},
   timestamp = {Mon, 03 Feb 2020 11:21:05 +0100},
   biburl    = {https://dblp.org/rec/journals/corr/abs-2001-11164.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Word order variances generally exist in different languages. In this paper, we hypothesize that cross-lingual models that fit into the word order of the source language might fail to handle target languages. To verify this hypothesis, we investigate whether making models insensitive to the word order of the source language can improve the adaptation performance in target languages. To do so, we reduce the source language word order information fitted to sequence encoders and observe the performance changes. In addition, based on this hypothesis, we propose a new method for fine-tuning multilingual BERT in downstream cross-lingual sequence labeling tasks. Experimental results on dialogue natural language understanding, part-of-speech tagging, and named entity recognition tasks show that reducing word order information fitted to the model can achieve better zero-shot cross-lingual performance. Furthermore, our proposed methods can also be applied to strong cross-lingual baselines, and improve their performances.}
 }
 
 @article{DBLP:journals/corr/abs-2003-07568,
   abbr = {arXiv},
+  code = {https://github.com/HLTCHKUST/Xpersona},
   author    = {Zhaojiang Lin and
                Zihan Liu and
                Genta Indra Winata and
@@ -535,11 +568,13 @@
   eprint    = {2003.07568},
   timestamp = {Tue, 24 Mar 2020 16:42:29 +0100},
   biburl    = {https://dblp.org/rec/journals/corr/abs-2003-07568.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Personalized dialogue systems are an essential step toward better human-machine interaction. Existing personalized dialogue agents rely on properly designed conversational datasets, which are mostly monolingual (e.g., English), which greatly limits the usage of conversational agents in other languages. In this paper, we propose a multi-lingual extension of Persona-Chat, namely XPersona. Our dataset includes persona conversations in six different languages other than English for building and evaluating multilingual personalized agents. We experiment with both multilingual and cross-lingual trained baselines, and evaluate them against monolingual and translation-pipeline models using both automatic and human evaluation. Experimental results show that the multilingual trained models outperform the translation-pipeline and that they are on par with the monolingual models, with the advantage of having a single model across multiple languages. On the other hand, the state-of-the-art cross-lingual trained models achieve inferior performance to the other models, showing that cross-lingual conversation modeling is a challenging task. We hope that our dataset and baselines will accelerate research in multilingual dialogue systems.}
 }
 
 @article{DBLP:journals/corr/abs-2003-12738,
   abbr = {arXiv},
+  code = {https://github.com/zlinao/Variational-Transformer},
   author    = {Zhaojiang Lin and
                Genta Indra Winata and
                Peng Xu and
@@ -554,7 +589,8 @@
   eprint    = {2003.12738},
   timestamp = {Fri, 27 Nov 2020 10:48:03 +0100},
   biburl    = {https://dblp.org/rec/journals/corr/abs-2003-12738.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Despite the great promise of Transformers in many sequence modeling tasks (e.g., machine translation), their deterministic nature hinders them from generalizing to high entropy tasks such as dialogue response generation. Previous work proposes to capture the variability of dialogue responses with a recurrent neural network (RNN)-based conditional variational autoencoder (CVAE). However, the autoregressive computation of the RNN limits the training efficiency. Therefore, we propose the Variational Transformer (VT), a variational self-attentive feed-forward sequence model. The VT combines the parallelizability and global receptive field of the Transformer with the variational nature of the CVAE by incorporating stochastic latent variables into Transformers. We explore two types of the VT: 1) modeling the discourse-level diversity with a global latent variable; and 2) augmenting the Transformer decoder with a sequence of fine-grained latent variables. Then, the proposed models are evaluated on three conversational datasets with both automatic metric and human evaluation. The experimental results show that our models improve standard Transformers and other baselines in terms of diversity, semantic relevance, and human judgment.}
 }
 
 @article{DBLP:journals/corr/abs-2004-14218,
@@ -573,11 +609,13 @@
   eprint    = {2004.14218},
   timestamp = {Sun, 03 May 2020 17:39:04 +0200},
   biburl    = {https://dblp.org/rec/journals/corr/abs-2004-14218.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Recently, fine-tuning pre-trained language models (e.g., multilingual BERT) to downstream cross-lingual tasks has shown promising results. However, the fine-tuning process inevitably changes the parameters of the pre-trained model and weakens its cross-lingual ability, which leads to sub-optimal performance. To alleviate this problem, we leverage continual learning to preserve the original cross-lingual ability of the pre-trained model when we fine-tune it to downstream tasks. The experimental result shows that our fine-tuning methods can better preserve the cross-lingual ability of the pre-trained model in a sentence retrieval task. Our methods also achieve better performance than other fine-tuning baselines on the zero-shot cross-lingual part-of-speech tagging and named entity recognition tasks.}
 }
 
 @article{DBLP:journals/corr/abs-2006-04666,
   abbr = {arXiv},
+  code = {https://github.com/HLTCHKUST/covid19-misinfo-data},
   author    = {Nayeon Lee and
                Yejin Bang and
                Andrea Madotto and
@@ -591,7 +629,8 @@
   eprint    = {2006.04666},
   timestamp = {Fri, 12 Jun 2020 14:02:57 +0200},
   biburl    = {https://dblp.org/rec/journals/corr/abs-2006-04666.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Debunking misinformation is an important and time-critical task as there could be adverse consequences when misinformation is not quashed promptly. However, the usual supervised approach to debunking via misinformation classification requires human-annotated data and is not suited to the fast time-frame of newly emerging events such as the COVID-19 outbreak. In this paper, we postulate that misinformation itself has higher perplexity compared to truthful statements, and propose to leverage the perplexity to debunk false claims in an unsupervised manner. First, we extract reliable evidence from scientific and news sources according to sentence similarity to the claims. Second, we prime a language model with the extracted evidence and finally evaluate the correctness of given claims based on the perplexity scores at debunking time. We construct two new COVID-19-related test sets, one is scientific, and another is political in content, and empirically verify that our system performs favorably compared to existing systems. We are releasing these datasets publicly to encourage more research in debunking misinformation on COVID-19 and other topics.}
 }
 
 @article{DBLP:journals/corr/abs-2008-06239,
@@ -609,7 +648,8 @@
   eprint    = {2008.06239},
   timestamp = {Fri, 21 Aug 2020 15:05:50 +0200},
   biburl    = {https://dblp.org/rec/journals/corr/abs-2008-06239.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Task-oriented dialogue systems use four connected modules, namely, Natural Language Understanding (NLU), a Dialogue State Tracking (DST), Dialogue Policy (DP) and Natural Language Generation (NLG). A research challenge is to learn each module with the least amount of samples (i.e., few-shots) given the high cost related to the data collection. The most common and effective technique to solve this problem is transfer learning, where large language models, either pre-trained on text or task-specific data, are fine-tuned on the few samples. These methods require fine-tuning steps and a set of parameters for each task. Differently, language models, such as GPT-2 (Radford et al., 2019) and GPT-3 (Brown et al., 2020), allow few-shot learning by priming the model with few examples. In this paper, we evaluate the priming few-shot ability of language models in the NLU, DST, DP and NLG tasks. Importantly, we highlight the current limitations of this approach, and we discuss the possible implication for future work.}
 }
 
 @article{DBLP:journals/corr/abs-2008-09378,
@@ -628,7 +668,8 @@
   eprint    = {2008.09378},
   timestamp = {Fri, 27 Nov 2020 10:48:03 +0100},
   biburl    = {https://dblp.org/rec/journals/corr/abs-2008-09378.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Most emotion recognition methods tackle the emotion understanding task by considering individual emotion independently while ignoring their fuzziness nature and the interconnections among them. In this paper, we explore how emotion correlations can be captured and help different classification tasks. We propose EmoGraph that captures the dependencies among different emotions through graph networks. These graphs are constructed by leveraging the co-occurrence statistics among different emotion categories. Empirical results on two multi-label classification datasets demonstrate that EmoGraph outperforms strong baselines, especially for macro-F1. An additional experiment illustrates the captured emotion correlations can also benefit a single-label classification task.}
 }
 
 @article{DBLP:journals/corr/abs-2008-12579,
@@ -646,7 +687,8 @@
   eprint    = {2008.12579},
   timestamp = {Wed, 16 Sep 2020 11:20:03 +0200},
   biburl    = {https://dblp.org/rec/journals/corr/abs-2008-12579.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Considerable progress has been made towards conversational models that generate coherent and fluent responses by training large language models on large dialogue datasets. These models have little or no control of the generated responses and miss two important features: continuous dialogue skills integration and seamlessly leveraging diverse knowledge sources. In this paper, we propose the Adapter-Bot, a dialogue model that uses a fixed backbone conversational model such as DialGPT (Zhang et al., 2019) and triggers on-demand dialogue skills (e.g., emphatic response, weather information, movie recommendation) via different adapters (Houlsby et al., 2019). Each adapter can be trained independently, thus allowing a continual integration of skills without retraining the entire model. Depending on the skills, the model is able to process multiple knowledge types, such as text, tables, and graphs, in a seamless manner. The dialogue skills can be triggered automatically via a dialogue manager, or manually, thus allowing high-level control of the generated responses. At the current stage, we have implemented 12 response styles (e.g., positive, negative etc.), 8 goal-oriented skills (e.g. weather information, movie recommendation, etc.), and personalized and emphatic responses. We evaluate our model using automatic evaluation by comparing it with existing state-of-the-art conversational models, and we have released an interactive system at adapterbot.emos.ai}
 }
 
 @article{DBLP:journals/corr/abs-2012-01711,
@@ -664,11 +706,13 @@
   eprint    = {2012.01711},
   timestamp = {Fri, 04 Dec 2020 12:07:23 +0100},
   biburl    = {https://dblp.org/rec/journals/corr/abs-2012-01711.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Extreme classification tasks are multi-label tasks with an extremely large number of labels (tags). These tasks are hard because the label space is usually (i) very large, e.g. thousands or millions of labels, (ii) very sparse, i.e. very few labels apply to each input document, and (iii) highly correlated, meaning that the existence of one label changes the likelihood of predicting all other labels. In this work, we propose a self-attention based variational encoder-model to extract the label-label and label-feature dependencies jointly and to predict labels for a given input. In more detail, we propose a non-autoregressive latent variable model and compare it to a strong autoregressive baseline that predicts a label based on all previously generated labels. Our model can therefore be used to predict all labels in parallel while still including both label-label and label-feature dependencies through latent variables, and compares favourably to the autoregressive baseline. We apply our models to four standard extreme classification natural language data sets, and one news videos dataset for automated label detection from a lexicon of semantic concepts. Experimental results show that although the autoregressive models, where use a given order of the labels for chain-order label prediction, work great for the small scale labels or the prediction of the highly ranked label, but our non-autoregressive model surpasses them by around 2% to 6% when we need to predict more labels, or the dataset has a larger number of the labels.}
 }
 
 @article{DBLP:journals/corr/abs-2012-04373,
   abbr = {arXiv},
+  code = {https://github.com/zliucr/CrossNER},
   author    = {Zihan Liu and
                Yan Xu and
                Tiezheng Yu and
@@ -686,7 +730,8 @@
   eprint    = {2012.04373},
   timestamp = {Wed, 09 Dec 2020 15:29:05 +0100},
   biburl    = {https://dblp.org/rec/journals/corr/abs-2012-04373.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Cross-domain named entity recognition (NER) models are able to cope with the scarcity issue of NER samples in target domains. However, most of the existing NER benchmarks lack domain-specialized entity types or do not focus on a certain domain, leading to a less effective cross-domain evaluation. To address these obstacles, we introduce a cross-domain NER dataset (CrossNER), a fully-labeled collection of NER data spanning over five diverse domains with specialized entity categories for different domains. Additionally, we also provide a domain-related corpus since using it to continue pre-training language models (domain-adaptive pre-training) is effective for the domain adaptation. We then conduct comprehensive experiments to explore the effectiveness of leveraging different levels of the domain corpus and pre-training strategies to do domain-adaptive pre-training for the crossdomain task. Results show that focusing on the fractional corpus containing domain-specialized entities and utilizing a more challenging pre-training strategy in domain-adaptive pre-training are beneficial for the NER domain adaptation, and our proposed method can consistently outperform existing cross-domain NER baselines. Nevertheless, experiments also illustrate the challenge of this cross-domain NER task. We hope that our dataset and baselines will catalyze research in the NER domain adaptation area. The code and data are available at https://github.com/zliucr/CrossNER.}
 }
 
 % Others
@@ -707,7 +752,8 @@
   doi       = {10.1162/coli\_a\_00373},
   timestamp = {Fri, 17 Jul 2020 16:00:06 +0200},
   biburl    = {https://dblp.org/rec/journals/coling/Costa-jussaEFS20.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We introduce the Computational Linguistics special issue on Multilingual and Interlingual Semantic Representations for Natural Language Processing. We situate the special issue’s five articles in the context of our fast-changing field, explaining our motivation for this project. We offer a brief summary of the work in the issue, which includes developments on lexical and sentential semantic representations, from symbolic and neural perspectives.}
 }
 
 
@@ -731,11 +777,13 @@
   doi       = {10.18653/v1/K19-1026},
   timestamp = {Tue, 10 Nov 2020 11:37:43 +0100},
   biburl    = {https://dblp.org/rec/conf/conll/WinataMWF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Training code-switched language models is difficult due to lack of data and complexity in the grammatical structure. Linguistic constraint theories have been used for decades to generate artificial code-switching sentences to cope with this issue. However, this require external word alignments or constituency parsers that create erroneous results on distant languages. We propose a sequence-to-sequence model using a copy mechanism to generate code-switching data by leveraging parallel monolingual translations from a limited source of code-switching data. The model learns how to combine words from parallel sentences and identifies when to switch one language to the other. Moreover, it captures code-switching constraints by attending and aligning the words in inputs, without requiring any external knowledge. Based on experimental results, the language model trained with the generated sentences achieves state-of-theart performance and improves end-to-end automatic speech recognition.}
 }
 
 @inproceedings{DBLP:conf/emnlp/LinMSXF19,
   abbr = {EMNLP},
+  code = {https://github.com/HLTCHKUST/MoEL},
   author    = {Zhaojiang Lin and
                Andrea Madotto and
                Jamin Shin and
@@ -757,7 +805,8 @@
   doi       = {10.18653/v1/D19-1012},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/emnlp/LinMSXF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Previous research on empathetic dialogue systems has mostly focused on generating responses given certain emotions. However, being empathetic not only requires the ability of generating emotional responses, but more importantly, requires the understanding of user emotions and replying appropriately. In this paper, we propose a novel end-toend approach for modeling empathy in dialogue systems: Mixture of Empathetic Listeners (MoEL). Our model first captures the user emotions and outputs an emotion distribution. Based on this, MoEL will softly combine the output states of the appropriate Listener(s), which are each optimized to react to certain emotions, and generate an empathetic response. Human evaluations on empatheticdialogues (Rashkin et al., 2018) dataset confirm that MoEL outperforms multitask training baseline in terms of empathy, relevance, and fluency. Furthermore, the case study on generated responses of different Listeners shows high interpretability of our model.}
 }
 
 @inproceedings{DBLP:conf/emnlp/LiuSXWXMF19,
@@ -786,7 +835,8 @@
   doi       = {10.18653/v1/D19-1129},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/emnlp/LiuSXWXMF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Despite the surging demands for multilingual task-oriented dialog systems (e.g., Alexa, Google Home), there has been less research done in multilingual or cross-lingual scenarios. Hence, we propose a zero-shot adaptation of task-oriented dialogue system to lowresource languages. To tackle this challenge, we first use a set of very few parallel word pairs to refine the aligned cross-lingual wordlevel representations. We then employ a latent variable model to cope with the variance of similar sentences across different languages, which is induced by imperfect cross-lingual alignments and inherent differences in languages. Finally, the experimental results show that even though we utilize much less external resources, our model achieves better adaptation performance for natural language understanding task (i.e., the intent detection and slot filling) compared to the current state-of-the-art model in the zero-shot scenario.}
 }
 
 @inproceedings{DBLP:conf/acl-wnlp/LeeMF19,
@@ -808,7 +858,8 @@
   url       = {https://www.aclweb.org/anthology/W19-3655/},
   timestamp = {Fri, 14 Aug 2020 11:51:23 +0200},
   biburl    = {https://dblp.org/rec/conf/acl-wnlp/LeeMF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Exploring social bias in chatbot is an important, yet relatively unexplored problem. In this paper, we propose an approach to understand social bias in chatbots by leveraging stereotype knowledge. It allows interesting comparison of bias between chatbots and humans, and provides intuitive analysis of existing chatbots by borrowing the finer-grain concepts of sexism and racism.}
 }
 
 @inproceedings{DBLP:conf/acl-wnlp/LeeBSF19,
@@ -831,7 +882,8 @@
   url       = {https://www.aclweb.org/anthology/W19-3638/},
   timestamp = {Fri, 14 Aug 2020 11:51:22 +0200},
   biburl    = {https://dblp.org/rec/conf/acl-wnlp/LeeBSF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {In the midst of a generation widely exposed to and influenced by media entertainment, the NLP research community has shown relatively little attention on the sexist comments in popular TV series. To understand sexism in TV series, we propose a way of collecting distant supervision dataset using Character Persona information with the psychological theories on sexism. We assume that sexist characters from TV shows are more prone to making sexist comments when talking about women, and show that this hypothesis is valid through experiment. Finally, we conduct an interesting analysis on popular TV show characters and successfully identify different shades of sexism that is often overlooked.}
 }
 
 @inproceedings{DBLP:conf/acl-mrqa/SuXWXKLF19,
@@ -860,11 +912,13 @@
   doi       = {10.18653/v1/D19-5827},
   timestamp = {Fri, 27 Nov 2020 10:48:06 +0100},
   biburl    = {https://dblp.org/rec/conf/acl-mrqa/SuXWXKLF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {With a large number of datasets being released and new techniques being proposed, Question answering (QA) systems have witnessed great breakthroughs in reading comprehension (RC)tasks. However, most existing methods focus on improving in-domain performance, leaving open the research question of how these mod-els and techniques can generalize to out-of-domain and unseen RC tasks. To enhance the generalization ability, we propose a multi-task learning framework that learns the shared representation across different tasks. Our model is built on top of a large pre-trained language model, such as XLNet, and then fine-tuned on multiple RC datasets. Experimental results show the effectiveness of our methods, with an average Exact Match score of 56.59 and an average F1 score of 68.98, which significantly improves the BERT-Large baseline by8.39 and 7.22, respectively}
 }
 
 @inproceedings{DBLP:conf/acl/MadottoLWF19,
   abbr = {ACL},
+  code = {https://github.com/HLTCHKUST/PAML},
   author    = {Andrea Madotto and
                Zhaojiang Lin and
                Chien{-}Sheng Wu and
@@ -883,7 +937,8 @@
   doi       = {10.18653/v1/p19-1542},
   timestamp = {Tue, 28 Jan 2020 10:27:43 +0100},
   biburl    = {https://dblp.org/rec/conf/acl/MadottoLWF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Existing personalized dialogue models use human designed persona descriptions to improve dialogue consistency. Collecting such descriptions from existing dialogues is expensive and requires hand-crafted feature designs. In this paper, we propose to extend Model-Agnostic Meta-Learning (MAML) (Finn et al., 2017) to personalized dialogue learning without using any persona descriptions. Our model learns to quickly adapt to new personas by leveraging only a few dialogue samples collected from the same user, which is fundamentally different from conditioning the response on the persona descriptions. Empirical results on Persona-chat dataset (Zhang et al., 2018) indicate that our solution outperforms non-meta-learning baselines using automatic evaluation metrics, and in terms of human-evaluated fluency and consistency.}
 }
 
 @inproceedings{DBLP:conf/acl/WuMHXSF19,
@@ -909,7 +964,8 @@
   doi       = {10.18653/v1/p19-1078},
   timestamp = {Tue, 28 Jan 2020 10:27:47 +0100},
   biburl    = {https://dblp.org/rec/conf/acl/WuMHXSF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Over-dependence on domain ontology and lack of knowledge sharing across domains are two practical and yet less studied problems of dialogue state tracking. Existing approaches generally fall short in tracking unknown slot values during inference and often have difficulties in adapting to new domains. In this paper, we propose a Transferable Dialogue State Generator (TRADE) that generates dialogue states from utterances using a copy mechanism, facilitating knowledge transfer when predicting (domain, slot, value) triplets not encountered during training. Our model is composed of an utterance encoder, a slot gate, and a state generator, which are shared across domains. Empirical results demonstrate that TRADE achieves state-of-the-art joint goal accuracy of 48.62% for the five domains of MultiWOZ, a human-human dialogue dataset. In addition, we show its transferring ability by simulating zero-shot and few-shot dialogue state tracking for unseen domains. TRADE achieves 60.58% joint goal accuracy in one of the zero-shot domains, and is able to adapt to few-shot cases without forgetting already trained domains.}
 }
 
 @inproceedings{DBLP:conf/aaai/SiddiqueBF19,
@@ -930,26 +986,8 @@
   doi       = {10.1609/aaai.v33i01.33017015},
   timestamp = {Wed, 25 Sep 2019 11:05:09 +0200},
   biburl    = {https://dblp.org/rec/conf/aaai/SiddiqueBF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
-}
-
-@article{DBLP:journals/corr/abs-1908-05925,
-  abbr = {arXiv},
-  author    = {Zihan Liu and
-               Yan Xu and
-               Genta Indra Winata and
-               Pascale Fung},
-  title     = {Incorporating Word and Subword Units in Unsupervised Machine Translation
-               Using Language Model Rescoring},
-  journal   = {CoRR},
-  volume    = {abs/1908.05925},
-  year      = {2019},
-  url       = {http://arxiv.org/abs/1908.05925},
-  archivePrefix = {arXiv},
-  eprint    = {1908.05925},
-  timestamp = {Tue, 01 Sep 2020 17:10:46 +0200},
-  biburl    = {https://dblp.org/rec/journals/corr/abs-1908-05925.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose a multilingual model to recognize Big Five Personality traits from text data in four different languages: English, Spanish, Dutch and Italian. Our analysis shows that words having a similar semantic meaning in different languages do not necessarily correspond to the same personality traits. Therefore, we propose a personality alignment method, GlobalTrait, which has a mapping for each trait from the source language to the target language (English), such that words that correlate positively to each trait are close together in the multilingual vector space. Using these aligned embeddings for training, we can transfer personality related training features from high-resource languages such as English to other low-resource languages, and get better multilingual results, when compared to using simple monolingual and unaligned multilingual embeddings. We achieve an average F-score increase (across all three languages except English) from 65 to 73.4 (+8.4), when comparing our monolingual model to multilingual using CNN with personality aligned embeddings. We also show relatively good performance in the regression tasks, and better classification results when evaluating our model on a separate Chinese dataset.}
 }
 
 @article{DBLP:journals/corr/abs-1906-08487,
@@ -968,7 +1006,8 @@
   eprint    = {1906.08487},
   timestamp = {Fri, 27 Nov 2020 10:48:03 +0100},
   biburl    = {https://dblp.org/rec/journals/corr/abs-1906-08487.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Recent neural conversation models that attempted to incorporate emotion and generate empathetic responses either focused on conditioning the output to a given emotion, or incorporating the current user emotional state. While these approaches have been successful to some extent in generating more diverse and seemingly engaging utterances, they do not factor in how the user would feel towards the generated dialogue response. Hence, in this paper, we advocate such look-ahead of user emotion as the key to modeling and generating empathetic dialogue responses. We thus train a Sentiment Predictor to estimate the user sentiment look-ahead towards the generated system responses, which is then used as the reward function for generating more empathetic responses. Human evaluation results show that our model outperforms other baselines in empathy, relevance, and fluency.}
 }
 
 @article{DBLP:journals/corr/abs-1908-09982,
@@ -988,11 +1027,13 @@
   eprint    = {1908.09982},
   timestamp = {Thu, 29 Aug 2019 16:32:34 +0200},
   biburl    = {https://dblp.org/rec/journals/corr/abs-1908-09982.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Despite their ubiquity in NLP tasks, Long Short-Term Memory (LSTM) networks suffer from computational inefficiencies caused by inherent unparallelizable recurrences, which further aggravates as LSTMs require more parameters for larger memory capacity. In this paper, we propose to apply low-rank matrix factorization (MF) algorithms to different recurrences in LSTMs, and explore the effectiveness on different NLP tasks and model components. We discover that additive recurrence is more important than multiplicative recurrence, and explain this by identifying meaningful correlations between matrix norms and compression performance. We compare our approach across two settings: 1) compressing core LSTM recurrences in language models, 2) compressing biLSTM layers of ELMo evaluated in three downstream NLP tasks.}
 }
 
 @inproceedings{DBLP:conf/emnlp/XuWMF19,
   abbr = {EMNLP},
+  code = {https://github.com/HLTCHKUST/sensational_headline},
   author    = {Peng Xu and
                Chien{-}Sheng Wu and
                Andrea Madotto and
@@ -1014,7 +1055,8 @@
   doi       = {10.18653/v1/D19-1303},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/emnlp/XuWMF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Sensational headlines are headlines that capture people’s attention and generate reader interest. Conventional abstractive headline generation methods, unlike human writers, do not optimize for maximal reader attention. In this paper, we propose a model that generates sensational headlines without labeled data. We first train a sensationalism scorer by classifying online headlines with many comments (“clickbait”) against a baseline of headlines generated from a summarization model. The score from the sensationalism scorer is used as the reward for a reinforcement learner. However, maximizing the noisy sensationalism reward will generate unnatural phrases instead of sensational headlines. To effectively leverage this noisy reward, we propose a novel loss function, Auto-tuned Reinforcement Learning (ARL), to dynamically balance reinforcement learning (RL) with maximum likelihood estimation (MLE). Human evaluation shows that 60.8% of samples generated by our model are sensational, which is significantly better than the Pointer-Gen baseline (See et al., 2017) and other RL models.}
 }
 
 @inproceedings{DBLP:conf/icassp/LinWF19,
@@ -1032,7 +1074,8 @@
   doi       = {10.1109/ICASSP.2019.8682945},
   timestamp = {Wed, 16 Oct 2019 14:14:52 +0200},
   biburl    = {https://dblp.org/rec/conf/icassp/LinWF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Existing models on open-domain comment generation are difficult to train, and they produce repetitive and uninteresting responses. The problem is due to multiple and contradictory responses from a single article, and by the rigidity of retrieval methods. To solve this problem, we propose a combined approach to retrieval and generation methods. We propose an attentive scorer to retrieve informative and relevant comments by leveraging user-generated data. Then, we use such comments, together with the article, as input for a sequence-to-sequence model with copy mechanism. We show the robustness of our model and how it can alleviate the aforementioned issue by using a large scale comment generation dataset. The result shows that the proposed generative model significantly outperforms strong baseline such as Seq2Seq with attention and Information Retrieval models by around 27 and 30 BLEU-1 points respectively.}
 }
 
 @inproceedings{DBLP:conf/icassp/XuF19a,
@@ -1049,7 +1092,8 @@
   doi       = {10.1109/ICASSP.2019.8683236},
   timestamp = {Fri, 27 Nov 2020 10:48:06 +0100},
   biburl    = {https://dblp.org/rec/conf/icassp/XuF19a.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {While reinforcement learning can effectively improve language generation models, it often suffers from generating incoherent and repetitive phrases [1]. In this paper, we propose a novel repetition normalized adversarial reward to mitigate these problems. Our repetition penalized reward can greatly reduce the repetition rate and adversarial training mitigates generating incoherent phrases. Our model significantly outperforms the baseline model on ROUGE-1 (+3.24), ROUGE-L (+2.25), and a decreased repetition-rate (-4.98%).}
 }
 
 @inproceedings{DBLP:conf/icassp/QiBWF19,
@@ -1069,7 +1113,8 @@
   doi       = {10.1109/ICASSP.2019.8682663},
   timestamp = {Sun, 25 Oct 2020 23:13:32 +0100},
   biburl    = {https://dblp.org/rec/conf/icassp/QiBWF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Many natural language questions are inherently subjective. They can not be answered properly if we do not know the personal preferences of the answerer. For example, "Do you like cats?" There is no "the only correct answer" to this question. To answer it, the model has to be able to capture the persona of the answerers. However, the users usually do not answer different questions with equal chance. Instead, while some are answered with a high frequency, others are hardly answered by anyone. To deal with this imbalanced sparsity in data, we first introduce a Siamese Network to capture the preferences patterns of the users. Then the model is ensembled with an additional dense layer to predict the answers of the users. Applying to an online dating dataset, our approach achieves a high accuracy of 78.7%.}
 }
 
 @inproceedings{DBLP:conf/naacl/BareziWFR19,
@@ -1094,7 +1139,8 @@
   doi       = {10.18653/v1/n19-1106},
   timestamp = {Tue, 28 Jan 2020 10:30:20 +0100},
   biburl    = {https://dblp.org/rec/conf/naacl/BareziWFR19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Extreme classification is a classification task on an extremely large number of labels (tags). User generated labels for any type of online data can be sparing per individual user but intractably large among all users. It would be useful to automatically select a smaller, standard set of labels to represent the whole label set. We can then solve efficiently the problem of multi-label learning with an intractably large number of interdependent labels, such as automatic tagging of Wikipedia pages. We propose a submodular maximization framework with linear cost to find informative labels which are most relevant to other labels yet least redundant with each other. A simple prediction model can then be trained on this label subset. Our framework includes both label-label and label-feature dependencies, which aims to find the labels with the most representation and prediction ability. In addition, to avoid information loss, we extract and predict outlier labels with weak dependency on other labels. We apply our model to four standard natural language data sets including Bibsonomy entries with users assigned tags, web pages with user assigned tags, legal texts with EUROVOC descriptors(A topic hierarchy with almost 4000 categories regarding different aspects of European law) and Wikipedia pages with tags from social bookmarking as well as news videos for automated label detection from a lexicon of semantic concepts. Experimental results show that our proposed approach improves label prediction quality, in terms of precision and nDCG, by 3% to 5% in three of the 5 tasks and is competitive in the others, even with a simple linear prediction model. An ablation study shows how different data sets benefit from different aspects of our model, with all aspects contributing substantially to at least one data set.}
 }
 
 @inproceedings{DBLP:conf/rep4nlp/WinataLF19,
@@ -1122,7 +1168,8 @@
   doi       = {10.18653/v1/w19-4320},
   timestamp = {Tue, 28 Jan 2020 10:30:34 +0100},
   biburl    = {https://dblp.org/rec/conf/rep4nlp/WinataLF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {In this paper, we propose Multilingual Meta-Embeddings (MME), an effective method to learn multilingual representations by leveraging monolingual pre-trained embeddings. MME learns to utilize information from these embeddings via a self-attention mechanism without explicit language identification. We evaluate the proposed embedding method on the code-switching English-Spanish Named Entity Recognition dataset in a multilingual and cross-lingual setting. The experimental results show that our proposed method achieves state-of-the-art performance on the multilingual setting, and it has the ability to generalize to an unseen language task.}
 }
 
 @inproceedings{DBLP:conf/rep4nlp/BareziF19,
@@ -1148,7 +1195,8 @@
   doi       = {10.18653/v1/w19-4331},
   timestamp = {Tue, 28 Jan 2020 10:30:32 +0100},
   biburl    = {https://dblp.org/rec/conf/rep4nlp/BareziF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose a novel method, Modality-based Redundancy Reduction Fusion (MRRF), for understanding and modulating the relative contribution of each modality in multimodal inference tasks. This is achieved by obtaining an (M + 1)-way tensor to consider the high-order relationships between M modalities and the output layer of a neural network model. Applying a modality-based tensor factorization method, which adopts different factors for different modalities, results in removing information present in a modality that can be compensated by other modalities, with respect to model outputs. This helps to understand the relative utility of information in each modality. In addition it leads to a less complicated model with less parameters and therefore could be applied as a regularizer avoiding overfitting. We have applied this method to three different multimodal datasets in sentiment analysis, personality trait recognition, and emotion recognition. We are able to recognize relationships and relative importance of different modalities in these tasks and achieves a 1% to 4% improvement on several evaluation measures compared to the state-of-the-art for all three tasks.}
 }
 
 @inproceedings{DBLP:conf/semeval/WinataMLSXXF19,
@@ -1177,7 +1225,8 @@
   doi       = {10.18653/v1/s19-2021},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/semeval/WinataMLSXXF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Detecting emotion from dialogue is a challenge that has not yet been extensively surveyed. One could consider the emotion of each dialogue turn to be independent, but in this paper, we introduce a hierarchical approach to classify emotion, hypothesizing that the current emotional state depends on previous latent emotions. We benchmark several feature-based classifiers using pre-trained word and emotion embeddings, state-of-the-art end-to-end neural network models, and Gaussian processes for automatic hyper-parameter search. In our experiments, hierarchical architectures consistently give significant improvements, and our best model achieves a 76.77% F1-score on the test set.}
 }
 
 @inproceedings{DBLP:conf/semeval/LeeLF19,
@@ -1202,7 +1251,8 @@
   doi       = {10.18653/v1/s19-2184},
   timestamp = {Tue, 28 Jan 2020 10:29:01 +0100},
   biburl    = {https://dblp.org/rec/conf/semeval/LeeLF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {This paper describes our system that has been submitted to SemEval-2019 Task 4: Hyperpartisan News Detection. We focus on removing the noise inherent in the hyperpartisanship dataset from both data-level and model-level by leveraging semi-supervised pseudo-labels and the state-of-the-art BERT model. Our model achieves 75.8% accuracy in the final by-article dataset without ensemble learning.}
 }
 
 @inproceedings{DBLP:conf/wmt/LiuXWF19,
@@ -1240,7 +1290,8 @@
   doi       = {10.18653/v1/w19-5327},
   timestamp = {Tue, 01 Sep 2020 17:10:47 +0200},
   biburl    = {https://dblp.org/rec/conf/wmt/LiuXWF19.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {This paper describes CAiRE's submission to the unsupervised machine translation track of the WMT'19 news shared task from German to Czech. We leverage a phrase-based statistical machine translation (PBSMT) model and a pre-trained language model to combine word-level neural machine translation (NMT) and subword-level NMT models without using any parallel data. We propose to solve the morphological richness problem of languages by training byte-pair encoding (BPE) embeddings for German and Czech separately, and they are aligned using MUSE (Conneau et al., 2018). To ensure the fluency and consistency of translations, a rescoring mechanism is proposed that reuses the pre-trained language model to select the translation candidates generated through beam search. Moreover, a series of pre-processing and post-processing approaches are applied to improve the quality of final translations.}
 }
 
 @article{DBLP:journals/corr/abs-1901-06486,
@@ -1258,7 +1309,8 @@
   eprint    = {1901.06486},
   timestamp = {Fri, 01 Feb 2019 13:39:59 +0100},
   biburl    = {https://dblp.org/rec/journals/corr/abs-1901-06486.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose an end-to-end affect recognition approach using a Convolutional Neural Network (CNN) that handles multiple languages, with applications to emotion and personality recognition from speech. We lay the foundation of a universal model that is trained on multiple languages at once. As affect is shared across all languages, we are able to leverage shared information between languages and improve the overall performance for each one. We obtained an average improvement of 12.8% on emotion and 10.1% on personality when compared with the same model trained on each language only. It is end-to-end because we directly take narrow-band raw waveforms as input. This allows us to accept as input audio recorded from any source and to avoid the overhead and information loss of feature extraction. It outperforms a similar CNN using spectrograms as input by 12.8% for emotion and 6.3% for personality, based on F-scores. Analysis of the network parameters and layers activation shows that the network learns and extracts significant features in the first layer, in particular pitch, energy and contour variations. Subsequent convolutional layers instead capture language-specific representations through the analysis of supra-segmental features. Our model represents an important step for the development of a fully universal affect recognizer, able to recognize additional descriptors, such as stress, and for the future implementation into affective interactive systems.}
 }
 
 %% 2018
@@ -1282,11 +1334,13 @@
   doi       = {10.18653/v1/P18-2096},
   timestamp = {Mon, 16 Sep 2019 13:46:41 +0200},
   biburl    = {https://dblp.org/rec/conf/acl/KampmanBBF18.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose a tri-modal architecture to predict Big Five personality trait scores from video clips with different channels for audio, text, and video data. For each channel, stacked Convolutional Neural Networks are employed. The channels are fused both on decision-level and by concatenating their respective fully connected layers. It is shown that a multimodal fusion approach outperforms each single modality channel, with an improvement of 9.4% over the best individual modality (video). Full backpropagation is also shown to be better than a linear combination of modalities, meaning complex interactions between modalities can be leveraged to build better models. Furthermore, we can see the prediction relevance of each modality for each trait. The described model can be used to increase the emotional intelligence of virtual agents.}
 }
 
 @inproceedings{DBLP:conf/acl/FungWM18,
   abbr = {ACL},
+  code = {https://github.com/HLTCHKUST/Mem2Seq},
   author    = {Andrea Madotto and
                Chien{-}Sheng Wu and
                Pascale Fung},
@@ -1304,7 +1358,8 @@
   doi       = {10.18653/v1/P18-1136},
   timestamp = {Mon, 16 Sep 2019 13:46:41 +0200},
   biburl    = {https://dblp.org/rec/conf/acl/FungWM18.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {End-to-end task-oriented dialog systems usually suffer from the challenge of incorporating knowledge bases. In this paper, we propose a novel yet simple end-to-end differentiable model called memory-to-sequence (Mem2Seq) to address this issue. Mem2Seq is the first neural generative model that combines the multi-hop attention over memories with the idea of pointer network. We empirically show how Mem2Seq controls each generation step, and how its multi-hop attention mechanism helps in learning correlations between memories. In addition, our model is quite general without complicated task-specific designs. As a result, we show that Mem2Seq can be trained faster and attain the state-of-the-art performance on three different task-oriented dialog datasets.}
 }
 
 @inproceedings{DBLP:conf/acl-codeswitch/WinataMWF18,
@@ -1329,7 +1384,8 @@
   doi       = {10.18653/v1/w18-3207},
   timestamp = {Tue, 28 Jan 2020 10:31:21 +0100},
   biburl    = {https://dblp.org/rec/conf/acl-codeswitch/WinataMWF18.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Lack of text data has been the major issue on code-switching language modeling. In this paper, we introduce multi-task learning based language model which shares syntax representation of languages to leverage linguistic information and tackle the low resource data issue. Our model jointly learns both language modeling and Part-of-Speech tagging on code-switched utterances. In this way, the model is able to identify the location of code-switching points and improves the prediction of next word. Our approach outperforms standard LSTM based language model, with an improvement of 9.7% and 7.4% in perplexity on SEAME Phase I and Phase II dataset respectively.}
 }
 
 @inproceedings{DBLP:conf/acl-codeswitch/WinataWMF18,
@@ -1355,11 +1411,13 @@
   doi       = {10.18653/v1/w18-3214},
   timestamp = {Tue, 28 Jan 2020 10:31:21 +0100},
   biburl    = {https://dblp.org/rec/conf/acl-codeswitch/WinataWMF18.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose an LSTM-based model with hierarchical architecture on named entity recognition from code-switching Twitter data. Our model uses bilingual character representation and transfer learning to address out-of-vocabulary words. In order to mitigate data noise, we propose to use token replacement and normalization. In the 3rd Workshop on Computational Approaches to Linguistic Code-Switching Shared Task, we achieved second place with 62.76% harmonic mean F1-score for English-Spanish language pair without using any gazetteer and knowledge-based information}
 }
 
 @inproceedings{DBLP:conf/emnlp/LeeWF18,
   abbr = {EMNLP},
+  code = {https://github.com/HLTCHKUST/fact-checking},
   author    = {Nayeon Lee and
                Chien{-}Sheng Wu and
                Pascale Fung},
@@ -1378,7 +1436,8 @@
   doi       = {10.18653/v1/d18-1143},
   timestamp = {Tue, 28 Jan 2020 10:28:49 +0100},
   biburl    = {https://dblp.org/rec/conf/emnlp/LeeWF18.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Fact-checking of textual sources needs to effectively extract relevant information from large knowledge bases. In this paper, we extend an existing pipeline approach to better tackle this problem. We propose a neural ranker using a decomposable attention model that dynamically selects sentences to achieve promising improvement in evidence retrieval F1 by 38.80%, with (x65) speedup compared to a TF-IDF method. Moreover, we incorporate lexical tagging methods into our pipeline framework to simplify the tasks and render the model more generalizable. As a result, our framework achieves promising performance on a large-scale fact extraction and verification dataset with speedup.}
 }
 
 @inproceedings{DBLP:conf/emnlp/ParkSF18,
@@ -1400,7 +1459,8 @@
   doi       = {10.18653/v1/d18-1302},
   timestamp = {Tue, 28 Jan 2020 10:28:10 +0100},
   biburl    = {https://dblp.org/rec/conf/emnlp/ParkSF18.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Abusive language detection models tend to have a problem of being biased toward identity words of a certain group of people because of imbalanced training datasets. For example, “You are a good woman” was considered “sexist” when trained on an existing dataset. Such model bias is an obstacle for models to be robust enough for practical use. In this work, we measure them on models trained with different datasets, while analyzing the effect of different pre-trained word embeddings and model architectures. We also experiment with three mitigation methods: (1) debiased word embeddings, (2) gender swap data augmentation, and (3) fine-tuning with a larger corpus. These methods can effectively reduce model bias by 90-98% and can be extended to correct model bias in other scenarios.}
 }
 
 @inproceedings{DBLP:conf/icassp/WuMWF18,
@@ -1420,7 +1480,8 @@
   doi       = {10.1109/ICASSP.2018.8461426},
   timestamp = {Wed, 16 Oct 2019 14:14:52 +0200},
   biburl    = {https://dblp.org/rec/conf/icassp/WuMWF18.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {In this paper, we propose an end-to-end Dynamic Query Memory Network (DQMemNN) with a delexicalization mechanism for task-oriented dialog systems. The added dynamic component enables memory networks to capture the dialog’s sequential dependencies by using a context-based query. Besides, the delexicalization mechanism reduces learning complexity and it alleviates the out-of-vocabulary entity problems. Experiments show that DQMemNN outperforms original end-to-end memory network models on bAbI full-dialog task by 3.1% per-response and 39.3% per-dialog accuracy. In addition, the proposed framework achieves a promising average per-response accuracy of 99.7% and perdialog accuracy of 97.8% without hand-crafted rules and features.}
 }
 
 @inproceedings{DBLP:conf/icassp/WinataKF18,
@@ -1439,7 +1500,8 @@
   doi       = {10.1109/ICASSP.2018.8461990},
   timestamp = {Wed, 16 Oct 2019 14:14:52 +0200},
   biburl    = {https://dblp.org/rec/conf/icassp/WinataKF18.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose a Long Short-Term Memory (LSTM) with attention mechanism to classify psychological stress from self-conducted interview transcriptions. We apply distant supervision by automatically labeling tweets based on their hashtag content, which complements and expands the size of our corpus. This additional data is used to initialize the model parameters, and which it is fine-tuned using the interview data. This improves the model's robustness, especially by expanding the vocabulary size. The bidirectional LSTM model with attention is found to be the best model in terms of accuracy (74.1%) and f-score (74.3%). Furthermore, we show that distant supervision fine-tuning enhances the model's performance by 1.6% accuracy and 2.1% f-score. The attention mechanism helps the model to select informative words.}
 }
 
 @inproceedings{DBLP:conf/semeval/ParkXF18,
@@ -1464,7 +1526,8 @@
   doi       = {10.18653/v1/s18-1039},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/semeval/ParkXF18.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {This paper describes our system that has been submitted to SemEval-2018 Task 1: Affect in Tweets (AIT) to solve five subtasks. We focus on modeling both sentence and word level representations of emotion inside texts through large distantly labeled corpora with emojis and hashtags. We transfer the emotional knowledge by exploiting neural network models as feature extractors and use these representations for traditional machine learning models such as support vector regression (SVR) and logistic regression to solve the competition tasks. Our system is placed among the Top3 for all subtasks we participated.}
 }
 
 @inproceedings{DBLP:conf/wassa/XuMWPF18,
@@ -1490,7 +1553,8 @@
   doi       = {10.18653/v1/w18-6243},
   timestamp = {Fri, 27 Nov 2020 10:48:05 +0100},
   biburl    = {https://dblp.org/rec/conf/wassa/XuMWPF18.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {In this paper, we propose Emo2Vec which encodes emotional semantics into vectors. We train Emo2Vec by multi-task learning six different emotion-related tasks, including emotion/sentiment analysis, sarcasm classification, stress detection, abusive language classification, insult detection, and personality recognition. Our evaluation of Emo2Vec shows that it outperforms existing affect-related representations, such as Sentiment-Specific Word Embedding and DeepMoji embeddings with much smaller training corpora. When concatenated with GloVe, Emo2Vec achieves competitive performances to state-of-the-art results on several tasks using a simple logistic regression classifier.}
 }
 
 @proceedings{DBLP:conf/coling/2018t,
@@ -1506,7 +1570,8 @@
   url       = {https://www.aclweb.org/anthology/volumes/C18-3/},
   timestamp = {Wed, 18 Sep 2019 12:15:53 +0200},
   biburl    = {https://dblp.org/rec/conf/coling/2018t.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {}
 }
 
 @article{DBLP:journals/corr/abs-1804-07691,
@@ -1525,7 +1590,8 @@
   eprint    = {1804.07691},
   timestamp = {Tue, 23 Jun 2020 13:25:21 +0200},
   biburl    = {https://dblp.org/rec/journals/corr/abs-1804-07691.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Dialogue policy transfer enables us to build dialogue policies in a target domain with little data by leveraging knowledge from a source domain with plenty of data. Dialogue sentences are usually represented by speech-acts and domain slots, and the dialogue policy transfer is usually achieved by assigning a slot mapping matrix based on human heuristics. However, existing dialogue policy transfer methods cannot transfer across dialogue domains with different speech-acts, for example, between systems built by different companies. Also, they depend on either common slots or slot entropy, which are not available when the source and target slots are totally disjoint and no database is available to calculate the slot entropy. To solve this problem, we propose a Policy tRansfer across dOMaIns and SpEech-acts (PROMISE) model, which is able to transfer dialogue policies across domains with different speech-acts and disjoint slots. The PROMISE model can learn to align different speech-acts and slots simultaneously, and it does not require common slots or the calculation of the slot entropy. Experiments on both real-world dialogue data and simulations demonstrate that PROMISE model can effectively transfer dialogue policies across domains with different speech-acts and disjoint slots.}
 }
 
 @article{DBLP:journals/corr/abs-1810-10254,
@@ -1544,7 +1610,8 @@
   eprint    = {1810.10254},
   timestamp = {Wed, 31 Oct 2018 14:24:29 +0100},
   biburl    = {https://dblp.org/rec/journals/corr/abs-1810-10254.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Building large-scale datasets for training code-switching language models is challenging and very expensive. To alleviate this problem using parallel corpus has been a major workaround. However, existing solutions use linguistic constraints which may not capture the real data distribution. In this work, we propose a novel method for learning how to generate code-switching sentences from parallel corpora. Our model uses a Seq2Seq model in combination with pointer networks to align and choose words from the monolingual sentences and form a grammatical code-switching sentence. In our experiment, we show that by training a language model using the augmented sentences we improve the perplexity score by 10% compared to the LSTM baseline.}
 }
 
 @article{DBLP:journals/corr/abs-1810-12620,
@@ -1562,7 +1629,8 @@
   eprint    = {1810.12620},
   timestamp = {Thu, 08 Nov 2018 10:57:46 +0100},
   biburl    = {https://dblp.org/rec/journals/corr/abs-1810-12620.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Speech recognition in mixed language has difficulties to adapt end-to-end framework due to the lack of data and overlapping phone sets, for example in words such as "one" in English and "wàn" in Chinese. We propose a CTC-based end-to-end automatic speech recognition model for intra-sentential English-Mandarin code-switching. The model is trained by joint training on monolingual datasets, and fine-tuning with the mixed-language corpus. During the decoding process, we apply a beam search and combine CTC predictions and language model score. The proposed method is effective in leveraging monolingual corpus and detecting language transitions and it improves the CER by 5%.}
 }
 
 %% 2017
@@ -1587,7 +1655,8 @@
   doi       = {10.18653/v1/P17-4021},
   timestamp = {Tue, 20 Aug 2019 11:59:16 +0200},
   biburl    = {https://dblp.org/rec/conf/acl/SiddiqueKYDF17.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Virtual agents need to adapt their personality to the user in order to become more empathetic. To this end, we developed Zara the Supergirl, an interactive empathetic agent, using a modular approach. In this paper, we describe the enhanced personality module with improved recognition from speech and text using deep learning frameworks. From raw audio, an average F-score of 69.6 was obtained from realtime personality assessment using a Convolutional Neural Network (CNN) model. From text, we improved personality recognition results with a CNN model on top of pre-trained word embeddings and obtained an average F-score of 71.0. Results from our Human-Agent Interaction study confirmed our assumption that people have different agent personality preferences. We use insights from this study to adapt our agent to user personality.}
 }
 
 @inproceedings{DBLP:conf/acl-alw/ParkF17,
@@ -1609,7 +1678,8 @@
   doi       = {10.18653/v1/w17-3006},
   timestamp = {Tue, 28 Jan 2020 10:30:30 +0100},
   biburl    = {https://dblp.org/rec/conf/acl-alw/ParkF17.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Automatic abusive language detection is a difficult but important task for online social media. Our research explores a twostep approach of performing classification on abusive language and then classifying into specific types and compares it with one-step approach of doing one multi-class classification for detecting sexist and racist languages. With a public English Twitter corpus of 20 thousand tweets in the type of sexism and racism, our approach shows a promising performance of 0.827 Fmeasure by using HybridCNN in one-step and 0.824 F-measure by using logistic regression in two-steps. }
 }
 
 @inproceedings{DBLP:conf/chi/YangMF17,
@@ -1634,7 +1704,8 @@
   doi       = {10.1145/3027063.3053163},
   timestamp = {Tue, 06 Nov 2018 16:58:46 +0100},
   biburl    = {https://dblp.org/rec/conf/chi/YangMF17.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {In March 2016, several online news media reported on the inadequate emotional capabilities of interactive virtual assistants. While significant progress has been made in the general intelligence and functionality of virtual agents (VA), the emotional intelligent (EI) VA has yet been thoroughly explored. We examine user’s perception of EI of virtual agents through Zara The Supergirl, a virtual agent that conducts question and answering type of conversational testing and counseling online. The results show that overall users perceive an emotion-expressing VA (EEVA) to be more EI than a non-emotion-expressing VA (NEEVA). However, simple affective expression may not be sufficient enough for EEVA to be perceived as fully EI.}
 }
 
 @inproceedings{DBLP:conf/icassp/BerteroF17,
@@ -1652,7 +1723,8 @@
   doi       = {10.1109/ICASSP.2017.7953131},
   timestamp = {Sun, 25 Oct 2020 23:13:45 +0100},
   biburl    = {https://dblp.org/rec/conf/icassp/BerteroF17.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose a real-time Convolutional Neural Network model for speech emotion detection. Our model is trained from raw audio on a small dataset of TED talks speech data, manually annotated into three emotion classes: “Angry”, “Happy” and “Sad”. It achieves an average accuracy of 66.1%, 5% higher than a feature-based SVM baseline, with an evaluation time of few hundred milliseconds. We also provide an in-depth model visualization and analysis. We show how our neural network effectively activates during the speech sections of the waveform regardless of the emotion, ignoring the silence parts which do not contain information. On the frequency domain the CNN filters distribute throughout all the spectrum range, with higher concentration around the average pitch range related to that emotion. Each filter also activates at multiple frequency intervals, presumably due to the additional contribution of amplitude-related feature learning. Our work will allow faster and more accurate emotion detection modules for human-machine empathetic dialog systems and other related applications.}
 }
 
 @inproceedings{DBLP:conf/interspeech/ParkLBDF17,
@@ -1673,7 +1745,8 @@
   url       = {http://www.isca-speech.org/archive/Interspeech\_2017/abstracts/2047.html},
   timestamp = {Mon, 15 Jul 2019 08:29:02 +0200},
   biburl    = {https://dblp.org/rec/conf/interspeech/ParkLBDF17.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We developed Emojive!, a mobile game app to make emotion recognition from audio and image interactive and fun, motivating the users to play with the app. The game is to act out a specific emotion, among six emotion labels (happy, sad, anger, anxiety, loneliness, criticism), given by the system. Double player mode lets two people to compete their acting skills. The more users play the game, the more emotion-labelled data will be acquired. We are using deep Convolutional Neural Network (CNN) models to recognize emotion from audio and facial image in real-time with a mobile front-end client including intuitive user interface and simple data visualization.}
 }
 
 @inproceedings{DBLP:conf/interspeech/MostafaF17,
@@ -1690,7 +1763,8 @@
   url       = {http://www.isca-speech.org/archive/Interspeech\_2017/abstracts/1590.html},
   timestamp = {Mon, 15 Jul 2019 08:29:02 +0200},
   biburl    = {https://dblp.org/rec/conf/interspeech/MostafaF17.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {In this paper, we propose a note-based query by humming (QBH) system with Hidden Markov Model (HMM) and Convolutional Neural Network (CNN) since note-based systems are much more efficient than the traditional frame-based systems. A note-based QBH system has two main components: humming transcription and candidate melody retrieval. For humming transcription, we are the first to use a hybrid model using HMM and CNN. We use CNN for its ability to learn the features directly from raw audio data and for being able to model the locality and variability often present in a note and we use HMM for handling the variability across the timeaxis. For candidate melody retrieval, we use locality sensitive hashing to narrow down the candidates for retrieval and dynamic time warping and earth mover’s distance for the final ranking of the selected candidates. We show that our HMM-CNN humming transcription system outperforms other state of the art humming transcription systems by ∼ 2% using the transcription evaluation framework by Molina et. al and our overall query by humming system has a Mean Reciprocal Rank of 0.92 using the standard MIREX dataset, which is higher than other state of the art note-based query by humming systems.}
 }
 
 @inproceedings{DBLP:conf/interspeech/SiddiqueF17,
@@ -1708,7 +1782,8 @@
   url       = {http://www.isca-speech.org/archive/Interspeech\_2017/abstracts/1379.html},
   timestamp = {Mon, 15 Jul 2019 08:29:02 +0200},
   biburl    = {https://dblp.org/rec/conf/interspeech/SiddiqueF17.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose a multilingual personality classifier that uses text data from social media and Youtube Vlog transcriptions, and maps them into Big Five personality traits using a Convolutional Neural Network (CNN). We first train unsupervised bilingual word embeddings from an English-Chinese parallel corpus, and use these trained word representations as input to our CNN. This enables our model to yield relatively high cross-lingual and multilingual performance on Chinese texts, after training on the English dataset for example. We also train monolingual Chinese embeddings from a large Chinese text corpus and then train our CNN model on a Chinese dataset consisting of conversational dialogue labeled with personality. We achieve an average F-score of 66.1 in our multilingual task compared to 63.3 F-score in cross-lingual, and 63.2 F-score in the monolingual performance.}
 }
 
 @inproceedings{DBLP:conf/interspeech/WinataKYDF17,
@@ -1728,7 +1803,8 @@
   url       = {http://www.isca-speech.org/archive/Interspeech\_2017/abstracts/2050.html},
   timestamp = {Mon, 15 Jul 2019 08:29:02 +0200},
   biburl    = {https://dblp.org/rec/conf/interspeech/WinataKYDF17.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Nora is a new dialog system that mimics a conversation with a psychologist by screening for stress, anxiety, and depression. She understands, empathizes, and adapts to users using emotional intelligence modules trained via statistical modelling such as Convolutional Neural Networks. These modules also enable her to personalize the content of each conversation.}
 }
 
 @inproceedings{DBLP:conf/iwsds/KampmanSYF17,
@@ -1753,7 +1829,8 @@
   doi       = {10.1007/978-3-319-92108-2\_13},
   timestamp = {Fri, 10 Aug 2018 17:18:16 +0200},
   biburl    = {https://dblp.org/rec/conf/iwsds/KampmanSYF17.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose to adapt a virtual agent called ‘Zara the Supergirl’ to user personality. User personality is deducted through two models, one based on raw audio and the other based on speech transcription text. Both models show good performance, with an average F-score of 69.6 for personality perception from audio, and an average F-score of 71.0 for recognition from text. Both models deploy a Convolutional Neural Network. Through a Human-Agent Interaction study we find correlations between user personality and preferred agent personality. The study suggests that especially the Openness user personality trait correlates with a preference for agents with more gentle personality. People also sense more empathy and enjoy better conversations when agents adapt to their personality.}
 }
 
 @article{DBLP:journals/corr/abs-1711-04079,
@@ -1772,7 +1849,8 @@
   eprint    = {1711.04079},
   timestamp = {Tue, 23 Jun 2020 13:25:21 +0200},
   biburl    = {https://dblp.org/rec/journals/corr/abs-1711-04079.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Training a personalized dialogue system requires a lot of data, and the data collected for a single user is usually insufficient. One common practice for this problem is to share training dialogues between different users and train multiple sequence-to-sequence dialogue models together with transfer learning. However, current sequence-to-sequence transfer learning models operate on the entire sentence, which might cause negative transfer if different personal information from different users is mixed up. We propose a personalized decoder model to transfer finer granularity phrase-level knowledge between different users while keeping personal preferences of each user intact. A novel personal control gate is introduced, enabling the personalized decoder to switch between generating personalized phrases and shared phrases. The proposed personalized decoder model can be easily combined with various deep models and can be trained with reinforcement learning. Real-world experimental results demonstrate that the phrase-level personalized decoder improves the BLEU over multiple sentence-level transfer baseline models by as much as 7.5%.}
 }
 
 %% 2016
@@ -1801,7 +1879,8 @@
   doi       = {10.1007/978-3-319-75487-1\_14},
   timestamp = {Sun, 25 Oct 2020 22:50:37 +0100},
   biburl    = {https://dblp.org/rec/conf/cicling/FungBWDCSYWL16.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Since the late 1990s when speech companies began providing their customer-service software in the market, people have gotten used to speaking to machines. As people interact more often with voice and gesture controlled machines, they expect the machines to recognize different emotions, and understand other high level communication features such as humor, sarcasm and intention. In order to make such communication possible, the machines need an empathy module in them, which is a software system that can extract emotions from human speech and behavior and can decide the correct response of the robot. Although research on empathetic robots is still in the primary stage, current methods involve using signal processing techniques, sentiment analysis and machine learning algorithms to make robots that can ’understand’ human emotion. Other aspects of human-robot interaction include facial expression and gesture recognition, as well as robot movement to convey emotion and intent. We propose Zara the Supergirl as a prototype system of empathetic robots. It is a software-based virtual android, with an animated cartoon character to present itself on the screen. She will get ’smarter’ and more empathetic, by having machine learning algorithms, and gathering more data and learning from it. In this paper, we present our work so far in the areas of deep learning of emotion and sentiment recognition, as well as humor recognition. We hope to explore the future direction of android development and how it can help improve people's lives.}
 }
 
 @inproceedings{DBLP:conf/coling/FungDSLYBWCW16,
@@ -1827,7 +1906,8 @@
   url       = {https://www.aclweb.org/anthology/C16-2058/},
   timestamp = {Wed, 18 Sep 2019 12:15:53 +0200},
   biburl    = {https://dblp.org/rec/conf/coling/FungDSLYBWCW16.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Zara, or ‘Zara the Supergirl’ is a virtual robot, that can exhibit empathy while interacting with an user, with the aid of its built in facial and emotion recognition, sentiment analysis, and speech module. At the end of the 5-10 minute conversation, Zara can give a personality analysis of the user based on all the user utterances. We have also implemented a real-time emotion recognition, using a CNN model that detects emotion from raw audio without feature extraction, and have achieved an average of 65.7% accuracy on six different emotion classes, which is an impressive 4.5% improvement from the conventional feature based SVM classification. Also, we have described a CNN based sentiment analysis module trained using out-of-domain data, that recognizes sentiment from the speech recognition transcript, which has a 74.8 F-measure when tested on human-machine dialogues.}
 }
 
 @inproceedings{DBLP:conf/emnlp/BerteroSWWCF16,
@@ -1853,7 +1933,8 @@
   doi       = {10.18653/v1/d16-1110},
   timestamp = {Tue, 28 Jan 2020 10:28:16 +0100},
   biburl    = {https://dblp.org/rec/conf/emnlp/BerteroSWWCF16.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {In this paper, we describe our approach of enabling an interactive dialogue system to recognize user emotion and sentiment in realtime. These modules allow otherwise conventional dialogue systems to have “empathy” and answer to the user while being aware of their emotion and intent. Emotion recognition from speech previously consists of feature engineering and machine learning where the first stage causes delay in decoding time. We describe a CNN model to extract emotion from raw speech input without feature engineering. This approach even achieves an impressive average of 65.7% accuracy on six emotion categories, a 4.5% improvement when compared to the conventional feature based SVM classification. A separate, CNN-based sentiment analysis module recognizes sentiments from speech recognition results, with 82.5 Fmeasure on human-machine dialogues when trained with out-of-domain data.}
 }
 
 @inproceedings{DBLP:conf/icassp/BerteroF16,
@@ -1870,7 +1951,8 @@
   doi       = {10.1109/ICASSP.2016.7472785},
   timestamp = {Sun, 25 Oct 2020 23:13:38 +0100},
   biburl    = {https://dblp.org/rec/conf/icassp/BerteroF16.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose a method to predict humor response in dialog using acoustic and language features. We use data from two popular TV sitcoms - "The Big Bang Theory" and "Seinfeld" - to predict how the audience responds to humor. Due to the sequentiality of humor response in dialogues we use a Conditional Random Field as classifier/predictor. Our method is relatively effective, with a maximum precision obtained of 72.1% in "Big Bang" and 60.2% in "Seinfeld". Experiments show that audio, speed, word and sentence length features are the most effective. This work is applicable to develop appropriate machine response empathetic to emotion in dialog, in addition to humor.}
 }
 
 @inproceedings{DBLP:conf/interspeech/DiabFHS16,
@@ -1889,7 +1971,8 @@
   url       = {http://www.isca-speech.org/archive/Interspeech\_2016/abstracts/abs16.html},
   timestamp = {Mon, 15 Jul 2019 08:29:02 +0200},
   biburl    = {https://dblp.org/rec/conf/interspeech/DiabFHS16.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {}
 }
 
 @inproceedings{DBLP:conf/interspeech/FungDSLYWC16,
@@ -1912,7 +1995,8 @@
   url       = {http://www.isca-speech.org/archive/Interspeech\_2016/abstracts/2012.html},
   timestamp = {Mon, 15 Jul 2019 08:29:02 +0200},
   biburl    = {https://dblp.org/rec/conf/interspeech/FungDSLYWC16.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Zara, or ‘Zara the Supergirl’, is a virtual robot that can show empathy while interacting with an user, and at the end of a 5-10 minute conversation, it can give a personality analysis based on the user responses. It can display and share emotions with the aid of its built in sentiment analysis, facial and emotion recognition, and speech module. Being the first of its kind, it has successfully integrated an empathetic system along with the human emotion recognition and sharing, into an augmented humanrobot interaction system. Zara was also displayed at the World Economic Forum held at Dalian in September 2015.}
 }
 
 @inproceedings{DBLP:conf/lrec/BerteroF16,
@@ -1938,7 +2022,8 @@
   url       = {http://www.lrec-conf.org/proceedings/lrec2016/summaries/927.html},
   timestamp = {Mon, 19 Aug 2019 15:22:41 +0200},
   biburl    = {https://dblp.org/rec/conf/lrec/BerteroF16.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose a comparison between various supervised machine learning methods to predict and detect humor in dialogues. We retrieve our humorous dialogues from a very popular TV sitcom: “The Big Bang Theory”. We build a corpus where punchlines are annotated using the canned laughter embedded in the audio track. Our comparative study involves a linear-chain Conditional Random Field over a Recurrent Neural Network and a Convolutional Neural Network. Using a combination of word-level and audio frame-level features, the CNN outperforms the other methods, obtaining the best F-score of 68.5% over 66.5% by CRF and 52.9% by RNN. Our work is a starting point to developing more effective machine learning and neural network models on the humor prediction task, as well as developing machines capable in understanding humor in general.}
 }
 
 @inproceedings{DBLP:conf/lrec/MostafaWAF16,
@@ -1966,7 +2051,8 @@
   url       = {http://www.lrec-conf.org/proceedings/lrec2016/summaries/1132.html},
   timestamp = {Mon, 19 Aug 2019 15:22:13 +0200},
   biburl    = {https://dblp.org/rec/conf/lrec/MostafaWAF16.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {In this paper, we present a music retrieval and recommendation system using machine learning techniques. We propose a query by humming system for music retrieval that uses deep neural networks for note transcription and a note-based retrieval system for retrieving the correct song from the database. We evaluate our query by humming system using the standard MIREX QBSH dataset. We also propose a similar artist recommendation system which recommends similar artists based on acoustic features of the artists’ music, online text descriptions of the artists and social media data. We use supervised machine learning techniques over all our features and compare our recommendation results to those produced by a popular similar artist recommendation website.}
 }
 
 @inproceedings{DBLP:conf/naacl/FungDSLYWC16,
@@ -1990,7 +2076,8 @@
   doi       = {10.18653/v1/n16-3018},
   timestamp = {Tue, 28 Jan 2020 10:30:21 +0100},
   biburl    = {https://dblp.org/rec/conf/naacl/FungDSLYWC16.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {Zara the Supergirl is an interactive system that, while having a conversation with a user, uses its built in sentiment analysis, emotion recognition, facial and speech recognition modules, to exhibit the human-like response of sharing emotions. In addition, at the end of a 5-10 minute conversation with the user, it can give a comprehensive personality analysis based on the user’s interaction with Zara. This is a first prototype that has incorporated a full empathy module, the recognition and response of human emotions, into a spoken language interactive system that enhances human-robot understanding. Zara was shown at the World Economic Forum in Dalian in September 2015.}
 }
 
 @inproceedings{DBLP:conf/naacl/BerteroF16,
@@ -2011,7 +2098,8 @@
   doi       = {10.18653/v1/n16-1016},
   timestamp = {Tue, 28 Jan 2020 10:30:08 +0100},
   biburl    = {https://dblp.org/rec/conf/naacl/BerteroF16.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose a first-ever attempt to employ a Long Short-Term memory based framework to predict humor in dialogues. We analyze data from a popular TV-sitcom, whose canned laughters give an indication of when the audience would react. We model the setuppunchline relation of conversational humor with a Long Short-Term Memory, with utterance encodings obtained from a Convolutional Neural Network. Out neural network framework is able to improve the F-score of 8% over a Conditional Random Field baseline. We show how the LSTM effectively models the setup-punchline relation reducing the number of false positives and increasing the recall. We aim to employ our humor prediction model to build effective empathetic machine able to understand jokes.}
 }
 
 @inproceedings{DBLP:conf/slt/BerteroF16,
@@ -2028,5 +2116,6 @@
   doi       = {10.1109/SLT.2016.7846293},
   timestamp = {Sun, 25 Oct 2020 23:10:16 +0100},
   biburl    = {https://dblp.org/rec/conf/slt/BerteroF16.bib},
-  bibsource = {dblp computer science bibliography, https://dblp.org}
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  abstract = {We propose a novel approach of combining acoustic and language features to predict humor in dialogues with a deep neural network. We analyze data from three popular TV-sitcoms whose canned laughters give an indication of when the audience would react. We model the setup-punchline sequential relation of conversational humor with a Long Short-Term Memory network, with utterance encodings obtained from two Convolutional Neural Networks, one to model word-level language features and the other to model frame-level acoustic and prosodic features. Our neural network framework is able to improve the F-score of over 5% over a Conditional Random Field baseline trained on a similar acoustic and language feature combination, achieving a much higher recall. It is also more effective over a language features-only setting, with a F-score of 10% higher. It also has a good generalization performance, reaching in most cases precision values of over 70% when trained and tested over different sitcoms.}
 }
