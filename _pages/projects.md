@@ -1,8 +1,9 @@
-<!-- ---
+---
 layout: page
-title: projects
-permalink: /projects/
-description: A growing collection of your cool projects.
+title: Demostartions
+short_title: Demos
+permalink: /demos/
+description:
 nav: true
 ---
 
@@ -44,4 +45,4 @@ nav: true
   </div>
 {% endfor %}
 
-</div> -->
+</div>
