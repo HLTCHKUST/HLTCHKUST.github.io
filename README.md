@@ -30,7 +30,7 @@ To deploy new changes, just
 
 `./bin/deploy --user`
 
-(no need to push anything)
+(don't forget to push you updates to source branch)
 
 Wait a few seconds, and refresh!
 
