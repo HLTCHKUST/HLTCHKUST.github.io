@@ -1,6 +1,6 @@
 ---
 layout: page
-title: ZhaoJiang Lin
+title: Zhaojiang Lin
 description: Ph.D. Student
 img: /assets/team_img/Lin.jpeg
 github: https://github.com/zlinao
