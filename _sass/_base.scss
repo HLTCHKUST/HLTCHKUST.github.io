@@ -178,15 +178,15 @@ a, table.table a {
   }
 }
 
-@mixin gradient() { 
+@mixin gradient() {
     // background: linear-gradient(217deg, rgba(84,185,234,1), rgba(84,185,234,0) 70.71%),
     // linear-gradient(127deg, rgba(136,96,208,0.8), rgba(136,96,208,0) 70.71%),
     // linear-gradient(250deg, rgba(135, 96, 208, 0.8), rgba(136,96,208,0) 70.71%),
     // linear-gradient(336deg, rgba(132,206,235,.8), rgba(132,206,235,0) 70.71%);
 
     background: linear-gradient(217deg, rgba(84,185,234,1), rgba(84,185,234,0) 70.71%),
-   linear-gradient(127deg, rgba(136,96,208,0.8), rgba(136,96,208,0) 70.71%), 
-   linear-gradient(250deg, rgba(136,96,208,0.8), rgba(136,96,208,0) 70.71%), 
+   linear-gradient(127deg, rgba(136,96,208,0.8), rgba(136,96,208,0) 70.71%),
+   linear-gradient(250deg, rgba(136,96,208,0.8), rgba(136,96,208,0) 70.71%),
    linear-gradient(336deg, rgba(132,206,235,.8), rgba(132,206,235,0) 70.71%);
   }
 
