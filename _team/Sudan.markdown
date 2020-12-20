@@ -5,6 +5,6 @@ description: Ph.D. Student
 img: /assets/team_img/Sudan.jpeg
 scholar: https://scholar.google.com/citations?user=nxnM758AAAAJ&hl=en
 email: mailto:dsu@connect.ust.hk
-importance: 0
+importance: 1
 status: current_student
 ---
