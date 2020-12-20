@@ -86,9 +86,6 @@ collections:
   team:
     output: true
     permalink: /team/:path/
-  alumnus:
-    output: true
-    permalink: /alumnus/:path/
 
 news_limit: 20
 

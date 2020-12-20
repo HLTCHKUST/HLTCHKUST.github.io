@@ -1,6 +1,7 @@
 ---
 layout: page
 title:
+short_title: Team
 permalink: /team/
 description:
 nav: true
