@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Demostartions
+title: Demostrations
 short_title: Demos
 permalink: /demos/
-description:
+description: Click each card to see our demonstrations!
 nav: true
 ---
 
@@ -22,12 +22,12 @@ nav: true
         <img src="{{ project.img | relative_url }}" alt="project thumbnail">
         {% endif %}
         <div class="card-body">
-          <h2 class="card-title text-lowercase">{{ project.title }}</h2>
+          <h2 class="card-title">{{ project.title }}</h2>
           <p class="card-text">{{ project.description }}</p>
           <div class="row ml-1 mr-1 p-0">
             {% if project.github %}
             <div class="github-icon">
-              <div class="icon" data-toggle="tooltip" title="Code Repository">
+              <div class="icon" data-toggle="tooltip" title="Github">
                 <a href="{{ project.github }}" target="_blank"><i class="fab fa-github gh-icon"></i></a>
               </div>
               {% if project.github_stars %}
