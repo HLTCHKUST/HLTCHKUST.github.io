@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Wenliang Dai
-description: PhD Student
+description: Ph.D. Student
 img: /assets/team_img/wenliang.jpeg
 github: https://github.com/wenliangdai
 linkedin: https://www.linkedin.com/in/wenliang-dai-145116123/
