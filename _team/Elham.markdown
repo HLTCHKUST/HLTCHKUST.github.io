@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Elham J. Barezi
-description: Ph.D. Student
+description: Postdoc. Student
 img: /assets/team_img/Elham.jpeg
 github: https://github.com/ejs680/
 linkedin: https://www.linkedin.com/in/elham-barezi-15272453/

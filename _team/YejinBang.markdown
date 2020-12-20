@@ -8,6 +8,6 @@ linkedin: https://www.linkedin.com/in/yejinbang/
 scholar: https://scholar.google.com/citations?user=s2bVuXEAAAAJ&hl=ja
 email: mailto:yejinbang@hotmail.com
 personal_url: 
-importance: 0
+importance: 98
 status: current_student
 ---

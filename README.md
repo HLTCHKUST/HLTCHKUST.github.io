@@ -30,7 +30,9 @@ To deploy new changes, just
 
 `./bin/deploy --user`
 
-(no need to push anything)
+then
+
+`git push origin source`
 
 Wait a few seconds, and refresh!
 
