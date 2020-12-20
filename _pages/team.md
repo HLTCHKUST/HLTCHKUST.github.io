@@ -26,9 +26,9 @@ nav: true
         {% if member.img %}
         <img src="{{ member.img | relative_url }}" alt="member thumbnail">
         {% endif %}
-        <div class="card-body">
+        <div class="card-body" style="padding: 1.1rem;">
           <h3 class="card-title">{{ member.title }}</h3>
-          <p class="card-text">{{ member.description }}</p>
+          <p class="card-text" style="font-weight: 300;">{{ member.description }}</p>
           <div class="row ml-1 mr-1 p-0">
             {% if member.email %}
             <div class="icon" data-toggle="tooltip" title="Code Repository">
@@ -81,10 +81,10 @@ nav: true
         {% if member.img %}
         <img src="{{ member.img | relative_url }}" alt="member thumbnail">
         {% endif %}
-        <div class="card-body">
+        <div class="card-body" style="padding: 1.1rem;">
           <h3 class="card-title">{{ member.title }}</h3>
-          <p class="card-text">{{ member.description }}</p>
-          <div class="row ml-1 mr-1 p-0">
+          <p class="card-text" style="font-weight: 300;">{{ member.description }}</p>
+          <!-- <div class="row ml-1 mr-1 p-0">
             {% if member.email %}
             <div class="icon" data-toggle="tooltip" title="Code Repository">
               <a href="{{ member.email }}" target="_blank"><i class="far fa-envelope gh-icon"></i></a>
@@ -105,7 +105,7 @@ nav: true
               <a href="{{ member.scholar }}" target="_blank"><i class="fas fa-graduation-cap gh-icon"></i></a>
             </div>
             {% endif %}
-          </div>
+          </div> -->
         </div>
       </div>
     {% if member.personal_url %}

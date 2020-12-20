@@ -307,13 +307,16 @@ footer.sticky-bottom {
     }
   }
 
-  .card-title {
+  h3.card-title {
     margin-bottom: 0.3rem;
     font-size: 1.2rem;
+    min-height: 46px;
+    font-weight: 300;
   }
 
-  .card-text {
+  p.card-text {
     margin-bottom: 0.2rem;
+    font-weight: 300;
   }
 
   .card img {
