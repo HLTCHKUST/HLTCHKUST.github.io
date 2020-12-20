@@ -1,9 +1,13 @@
 ---
 layout: page
-title: project 1
-description: a project with a background image
-img: /assets/img/12.jpg
+title: Wenliang Dai
+description: PhD Student
+img: /assets/team_img/wenliang.jpeg
+github: https://github.com/wenliangdai
+linkedin: https://github.com/wenliangdai
+scholar: https://github.com/wenliangdai
 importance: 1
+status: alumni
 ---
 
 Every project has a beautiful feature showcase page.
