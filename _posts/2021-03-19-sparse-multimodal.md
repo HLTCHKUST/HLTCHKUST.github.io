@@ -95,7 +95,7 @@ In the above figure, we can see that our sparse end-to-end model is divided into
 
 <br />
 <img class="center"  width="40%" src="/assets/img/sparse-mm/cross-modal-sparse-cnn-block.png" alt="...">
-<figcaption>Figure 3. Cross Modal Sparse Attention Block.</figcaption>
+<figcaption>Figure 3. Cross Modal Sparse CNN Block.</figcaption>
 <br />
 
 Our cross-modal Sparse CNN block consist of two main components which are a [Cross-modal attention](#cross-modal-attention-layer) layer and a [Sparse CNN](#sparse-cnn-layer) layer. Our cross-model attention layer is used to extract the important point on the audio and video modalities and then pass only the remaining points into sparse CNN for further processing. 
