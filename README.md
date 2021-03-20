@@ -38,6 +38,13 @@ Wait a few seconds, and refresh!
 
 # For local development
 
+## To build the latest content that you change
+```bash
+bundle exec jekyll build
+```
+
+
+## To run the server locally
 ```bash
 bundle exec jekyll serve
 ```

@@ -2,6 +2,7 @@
 layout: post
 title: 'Multimodal End-to-End Sparse Model for Emotion Recognition'
 date: 2021-03-19 20:30:00
+author: "Samuel Cahyawijaya"
 description: Existing multimodal solutions incorporate a two-phase pipeline which results in suboptimal performance. We introduces a sparse deep learning model that allows end-to-end learning from raw text, audio, & video altogether with only a single GPU.
 ---
 <style>
@@ -66,107 +67,109 @@ pre.code code {
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-The existing works in multimodal affective computing tasks, such as emotion recognition, generally adopt a two-phase pipeline. e, first extracting feature representations for each single modality with hand-crafted algorithms and then performing end-to-end learning with the extracted features. This often leads to complication in designing and choosing the best extraction algorithm and sub-optimal performance of the model because of the feature is very sparse and not tunable. In this blog post, we introduce a sparse model that allows end2end learning from raw text, audio, & video altogether with only a single 1080Ti GPU.
+The existing works in multimodal affective computing tasks, such as emotion recognition, generally adopt a two-phase pipeline approach ([Zadeh et al., 2018](https://www.semanticscholar.org/paper/Memory-Fusion-Network-for-Multi-view-Sequential-Zadeh-Liang/609512f19e06bf393cb79fbf57183f75b8d889d2); [Tsai et al., 2018](https://openreview.net/forum?id=rygqqsA9KX), [2019](https://www.semanticscholar.org/paper/Multimodal-Transformer-for-Unaligned-Multimodal-Tsai-Bai/949fef650da4c41afe6049a183b504b3cc91f4bd); [Rahman et al., 2020](https://www.aclweb.org/anthology/2020.acl-main.214/)) which first extracting feature representations for each single modality with hand-crafted algorithms and then performing end-to-end learning with the extracted features. This often leads to complication in designing and choosing the best extraction algorithm and sub-optimal performance of the model because of the feature is very sparse and not tunable. In this blog post, we introduce a sparse model that allows end-to-end learning from raw text, audio, & video altogether with only a single 1080Ti GPU. We compare our proposed method with two different approaches, the first one is the two-phase pipeline model with hand-crafted features and the second one is the fully end-to-end model.
 
 <br />
 <br />
-<img class="center"  width="55%" src="/assets/img/IMG.png" alt="...">
-<figcaption>Figure 1. Illustration of feature extraction from hand-crafted model (\textit{left}), fully end-to-end model (\textit{middle}), and sparse end-to-end model (\textit{right}). The red dots represent the keypoints extracted by hand-crafted models. The areas formed by red lines represent the regions of interest that are processed by (sparse) end-to-end models to extract the features.</figcaption>
+<img class="center"  width="55%" src="/assets/img/sparse-mm/highlight.jpg" alt="...">
+<figcaption>Figure 1. Illustration of feature extraction from hand-crafted model <b>(left)</b>, fully end-to-end model <b>(middle)</b>, and sparse end-to-end model <b>(right)</b>. The red dots represent the keypoints extracted by hand-crafted models. The areas formed by red lines represent the regions of interest that are processed by (sparse) end-to-end models to extract the features.</figcaption>
 <br />
 <br />
 
-The most successful approach in few-shot learning for task-oriented dialogue systems is notably [transfer learning](https://en.wikipedia.org/wiki/Transfer_learning), where a large model is firstly pre-trained on a large corpus to be then fine-tuned on specific tasks. For task-oriented dialogue systems, [Wu et. al 2020](https://arxiv.org/abs/2004.06871) proposed [TOD-BERT](https://github.com/jasonwu0731/ToD-BERT) a large pre-trained model which can achieve better performance than [BERT](https://arxiv.org/abs/1810.04805) in few-shots NLU, DST and DP. [Liu et. al. 2019](https://arxiv.org/pdf/2004.11727.pdf) proposed a two-step classification for few-shot slot-filling, a key task for the NLU module. Similarly, [Peng et. al. 2020](https://arxiv.org/pdf/2002.12328.pdf) introduced a benchmark for few-shot NLG and a pre-trained language model ([SC-GPT](https://github.com/pengbaolin/SC-GPT)) specialized for the task. Further, a template rewriting schema based on
-T5 ([Raffel et al., 2019](https://arxiv.org/abs/1910.10683)) was developed by [Kale et.al. 2020](https://arxiv.org/pdf/2004.15006v1.pdf) for few-shot NLG in two well-known datasets. [Peng et. al. 2020](https://arxiv.org/abs/2005.05298) proposed a pre-trained language model (LM) for end-to-end pipe-lined task-oriented dialogue systems. In their experiments they showed promising few-shot learning performance in MWoZ ([Budzianowski et al., 2018](https://arxiv.org/abs/1810.00278)). 
+As shown on the figure above, hand-crafted algorithm such as [OpenFace](https://github.com/TadasBaltrusaitis/OpenFace) and [OpenCV](https://opencv.org/) only capture a small set of keypoints and extract higher level features from the relation between those points. This might produce a fine-grained intuitive representation, although it might not capture all the required points and difficult to be updated, as it needs to be manually tuned. On the contrary, fully end-to-end (FE2E) models enable us to consider all the points in order to extract higher level features. This makes a fully end-to-end model the exact opposite of hand-crafted algorithm, as it might not produce a very intuitive representation but it can capture all the points needed and the model can adjust which point to extract according to the goal of the task. In terms of computation resources, fully end-to-end model generally requires more computation than the hand-crafted counterpart as it takes into account all the points in the image. We try to take both advantage from both methods and invent Multimodal End-to-end Sparse Model (MESM) that not only use less computation than end-to-end model, but also provides an intuitive explaination of what feature is extracted from a given image. We utilize convolution neural network (CNN), [Sparse CNN](https://github.com/facebookresearch/SparseConvNet) and [Transformer](https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf) as the backbone of our model. The architecture of our sparse end-to-end model is shown on the following figure:
 
 <br />
 <br />
-<img class="center"  width="35%" src="/assets/img/few_shot.png" alt="...">
-<figcaption>Figure 2. Language Model priming for few-shot intent recognition. Image inspired by OpenAI GPT-3 (Brown TB et.al, ‎2020)</figcaption>
+<img class="center"  width="95%" src="/assets/img/sparse-mm/main_model.jpg" alt="...">
+<figcaption>Figure 2. Architecture of our Multimodal End-to-end Sparse Model (MESM). On the left, we show the general architecture flow.  In the middle and on the right, we exhibit the details of the cross-modal sparse CNN block,especially the cross-modal attention layer, which is the key to making the CNN model sparse.</figcaption>
 <br />
 <br />
 
-For performing few-shot learning, existing methods require a set of task-specific parameters since the model is fine-tuned with few samples. Differently, in this paper, we perform few-shot learning by priming LMs with few-examples ([Radford, et.al. 2018](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf), [Brown TB et.al, ‎2020](https://arxiv.org/pdf/2005.14165.pdf)). In this setting, **NO** parameters are updated, thus allowing a single model to perform multiple tasks at the same time. In this blog, we evaluate the few-shot ability of LM priming on the four task-oriented tasks previously mentioned (i.e., NLU, DST, DP, and NLG). 
+In the above figure, we can see that our sparse end-to-end model is divided into 3 main pathways, one for each modality. For text modality, we encode the text with subword tokenization and feed the tokens into a transformer model. For audio and video signal, we use a single layer 2D convolution neural network (CNN) to extract low level features from the image and perform feature extraction with 3 layers of [Cross-modal Sparse CNN block](#cross-modal-sparse-cnn) and then feed the extracted features into a small transformer model. To generate the final prediction, we first standardize the feature dimension for all modalities with a feed-forward network and then we combine all of the features with a multimodal fusion layer, which calculate the linear combination from all the extracted features for each predicted class.
 
-\\
-Currently, GPT-3 is not available to the public, or at least not to us now &#128584;; thus we experiment on different sizes GPT-2 models such as SMALL (117M), LARGE (762M), and XL (1.54B). All the experiments are run on a single NVIDIA 1080Ti GPU.
+<a name="cross-modal-sparse-cnn"></a>
+<br/>
+<br/>
 
+## Cross-modal Sparse CNN
 
-### Priming the LM for few-shot learning
-Differently from fine-tuning, few-shot learning with LMs requires designing prefixes to perform few-shot learning ([Radford, et.al. 2018](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf), [Brown TB et.al, ‎2020](https://arxiv.org/pdf/2005.14165.pdf)). These prefixes are provided to the LM and the generate token become the actual prediction, Figure 2 shows an example for the intent recognition task. In our four tasks, we use three categories of prefixes: *binary*, *value-based* and *generative* --[check the main paper for more information](https://arxiv.org/abs/2008.06239)--. We use different prefix styles depending on the task and we compare the results of LM few-shot priming with those of the existing finetuning-base models. In all the experiments, we use different number of shots since different tasks may fit more or fewer samples in the 1024 max input size of GPT-2.
-
-
-#### NLU
-We use the SNIPS ([Coucke et al., 2018](https://arxiv.org/abs/1805.10190)) dataset for evaluating the *SLOT-FILLING* and *INTENT* recognition tasks. For the *SLOT-FILLING* task, we follow the few-shot setting of [Liu et. al. 2019](https://arxiv.org/pdf/2004.11727.pdf), and we use the official CoNLL F1 scorer as the evaluation metric. For the *INTENT* classification, we fine-tune RoBERTa ([Liu et al. 2019](https://arxiv.org/abs/1907.11692)) with 10 samples and use accuracy as the evaluation metric. We use a *value-based* LM prefix for the *SLOT-FILLING* task with a maximum of 15 shots, and *binary* LM prefix for the *INTENT* classification task with a maximum of 10 shots. An example of a prefix for the two tasks and the few-shot performance evaluation are shown in the Figure below. 
-
-<pre class='code code-css'>
-    <label>SLOT-FILLING</label>
-    <code>add tune to my hype playlist => entity_name = none\n
-add to playlist confidence boost here comes => entity_name = here comes \n
-add the track bg knocc out to the rapcaviar playlist => entity_name =</code>
-  </pre>
-  <pre class='code code-css'>
-    <label>INTENT</label>
-    <code>listen to westbam alumb allergic on google music => playmusic = true\n 
-rate this novel 4 points out of 6 => playmusic = false\n
-add sabrina salerno to the grime instrumentals playlist => playmusic =</code>
-  </pre>
 <br />
-<img class="center"  width="96%" src="/assets/img/NLU.png" alt="...">
-<!-- <img class="center" width="50%" src="/assets/img/INTENT.png" alt="..."> -->
+<img class="center"  width="40%" src="/assets/img/sparse-mm/cross-modal-sparse-cnn-block.png" alt="...">
+<figcaption>Figure 3. Cross Modal Sparse Attention Block.</figcaption>
+<br />
 
-#### DST
-We use the MultiWoZ ([Budzianowski et al., 2018](https://arxiv.org/abs/1810.00278)) dataset for evaluating the *DST* task. Differently from other works, we use the last user utterance only as input to the model, and we update the predicted-DST through turns. For the few-shot evaluation, we follow the setting of [Wu et. al 2020](https://arxiv.org/abs/2004.06871), and we report the joint and slot accuracy. As baselines, we use [TOD-BERT](https://github.com/jasonwu0731/ToD-BERT) and [BERT](https://arxiv.org/abs/1810.04805) fine-tuned with 10% of the training data, which is equivalent to 500 examples. We use a *value-based* LM prefix, as for the *SLOT-FILLING* task, with a maximum of 15 shots due to limited context. An example of a prefix and the few-shot performance evaluation are shown in the Figure below. 
+Our cross-modal Sparse CNN block consist of two main components which are a [Cross-modal attention](#cross-modal-attention-layer) layer and a [Sparse CNN](#sparse-cnn-layer) layer. Our cross-model attention layer is used to extract the important point on the audio and video modalities and then pass only the remaining points into sparse CNN for further processing. 
 
-<pre class='code code-css'>
-    <label>DST</label>
-    <code>i need a cab by 12:30 too the contact # and car type will be most helpful => leave_at = 12:30 \n
-i would like the taxi to pick me up from the hotel . i need to be at the restaurant at 18:30 . => leave_at = none\n
-i would like a taxi from saint john s college to pizza hut fen ditton . => leave_at =</code>
-  </pre>
-  <img class="center"  width="100%" src="/assets/img/DST.png" alt="...">
+<a name="cross-modal-attention-layer"></a>
+<br/>
+<br/>
+
+#### Cross-modal attention
+
+<br />
+<img class="center" width="20%" src="/assets/img/sparse-mm/cross-modal-attention.png" alt="...">
+<figcaption>Figure 4. Cross-modal Attention Layer.</figcaption>
+<br />
+
+Our cross-modal attention layer is used to filter out unnecessary from audio and video modalities by calculating attention from the  text modality to the audio and video modalities. We utilize additive attention mechanism ([Bahdanau et al., 2015](https://arxiv.org/pdf/1409.0473.pdf)) over a pair of modalities to compute the attention score. From the resulting attention score, we perform nucleus / top-p sampling with a threshold hyperparameter <b>p</b>. 
+
+We further conduct a deeper analysis to measure the effect of hyperparameter <b>p</b> to the model quality and computational cost required by the model as shown on the following figure
+
+<br />
+<img class="center"  width="90%" src="/assets/img/sparse-mm/top-p.jpg" alt="...">
+
+<a name="sparse-cnn-layer"></a>
+<br/>
+<br />
+
+#### Sparse CNN
+Sparse CNN is introduced by ([Graham et al., 2017](https://arxiv.org/abs/1706.01307), [2018](https://arxiv.org/abs/1711.10275)). Sparse CNN is specifically made to avoid unnecessary computation in a sparse tensor that will happen when we use a traditional CNN layer. The following figure shows the different between a traditional CNN layer and a sparse CNN layer. <small>* image is taken from https://github.com/facebookresearch/SparseConvNet</small>
+
+<br />
+<img class="center" width="30%" src="https://raw.githubusercontent.com/facebookresearch/SparseConvNet/master/img/i.gif" alt="..."/>
+<br />
+<img class="center" width="30%" src="https://raw.githubusercontent.com/facebookresearch/SparseConvNet/master/img/img.gif" alt="..."/>
+<figcaption>Figure 6. Traditional CNN (top) vs Sparse CNN (bottom)</figcaption>
+<br />
 
 
-#### ACT
-We use the MultiWoZ ([Budzianowski et al., 2018](https://arxiv.org/abs/1810.00278))  dataset for evaluating the speech *ACT* identification task. Differently from other works, only the system utterance is used as input to the model, instead of including the dialogue history and the user utterance as in [Wu et. al 2020](https://arxiv.org/abs/2004.06871). For the few-shot evaluation, we follow the setting of [Wu et. al 2020](https://arxiv.org/abs/2004.06871), i.e., F1-score. As baselines, we use [TOD-BERT](https://github.com/jasonwu0731/ToD-BERT) and [BERT](https://arxiv.org/abs/1810.04805), fine-tuned with 10% of the training data, which is equivalent to 500 examples. We use a *binary* LM prefix, as for the intent classification task, with a maximum of 15 shots due to limited context. An example of a prefix and the few-shot performance evaluation are shown in the Figure below. 
+## Results & Analysis
 
-  <pre class='code code-css'>
-    <label>ACT</label>
-    <code>yes your booking is successful and your reference number is ri4vvzyc . => offerbooked = true\n
-what type of food are you looking for ? => offerbooked = false \n
-i do not seem to be finding anything called nusha . what type of food does the restaurant serve ? => offerbooked =</code>
-  </pre>
-  <img class="center"  width="60%" src="/assets/img/ACT.png" alt="...">
+<small>* We run our end-to-end experiment in 2 datasets, IEMOCAP & CMU-MOSEI, but as some of the raw data from the provided original dataset has been removed, we reorganize the dataset and generate a new dataset split for both datasets. Please go to [our paper](https://www.semanticscholar.org/paper/Multimodal-End-to-End-Sparse-Model-for-Emotion-Dai-Cahyawijaya/3e90244d0594e36a7c8895eba84cbeba942f3186) for more detail about the dataset reorganization and the setup of our experiment</small>
 
+<br />
+<img class="center" width="90%" src="/assets/img/sparse-mm/results.png" alt="..."/>
+<br />
 
-#### NLG
-We use the FewShotWOZ ([Peng et. al. 2020](https://arxiv.org/pdf/2002.12328.pdf)) dataset for evaluating the *NLG* task. For the few-shot evaluation, we follow the setting of [Peng et. al. 2020](https://arxiv.org/pdf/2002.12328.pdf) and use the BLEU and slot error rate (SLR) as metrics. We use SC-LSTM, GPT-2, and SC-GPT-2 ([Peng et. al. 2020](https://arxiv.org/pdf/2002.12328.pdf)) as baselines, all fine-tuned with 50 examples from the training data. We use a *generative* LM prefix with a maximum of 20 shots due to limited context. An example of a prefix and the few-shot performance evaluation are shown in the Figure below.
+From the experimental results and ablation study, we observe that: 
+* End-to-end models, both Fully End-to-End (F2E2E) modeland our proposed Multimodal End-to-End Sparse Model (MESM) shows superiority compared to the two-phase pipeline models (LF-LSTM, LF-TRANS, EmoEmbs, and MulT). 
+* Our MESM achieves slightly lower results compared to the FE2E model, while requiring less than 60% of the F2E2E model computational cost.
+* In two modalities settings, our MESM can achieve a performance that is on par with the FE2Emodel or is even slightly better.
 
-  <pre class='code code-css'>
-    <label>NLG</label>
-    <code>inform(name='hilton san francisco financial district';area='chinatown') => the hilton san francisco financial district is near chinatown\n
-inform(name='ocean park motel';dogsallowed='none';phone='4155667020') => the phone number for ocean park motel is 4155667020 . no dogs are allowed there \n
-inform(name='super 8 san francisco';phone='8005369326') =></code>
-  </pre>
-  <img class="center"  width="100%" src="/assets/img/NLG.png" alt="...">
+<br />
+<img class="center" width="30%" src="/assets/img/sparse-mm/ablation.png" alt="..."/>
+<br />
 
+## Case Study
+<br />
+<img class="center" width="90%" src="/assets/img/sparse-mm/case_study_new.jpg" alt="..."/>
+<figcaption>Figure 7. Cross-modal attention to the face region of the image data</figcaption>
+<br />
 
-### Analysis and Limitation
-From the experimental results, we observe that: 
-* The larger the model the better the performance in both the *NLU* and *NLG* tasks, while, instead, in the *DST* and *ACT* tasks, GPT-2 LARGE (762M) performs better than the XL (1.54B) version. This is quite counterintuitive given the results reported for GPT-3. Further investigation is required to understand whether changing the prefix can help to improve the performance of larger models;
-* In the *NLU*, *ACT* and *NLG*, LM priming few-shot learning shows promising results, achieving similar or better performance than the weakest finetuning-based baseline, which also uses a larger number of shots. On the other hand, in *DST* the gap with the existing baseline is still large.
+<br />
+<img class="center" width="90%" src="/assets/img/sparse-mm/audio_appendix.jpg" alt="..."/>
+<figcaption>Figure 8. Cross-modal attention to the mel-spectrum of the audio data. </figcaption>
+<br />
 
-\\
-We also observe two limitations of the LM priming: 
-* Using *binary* and *value-based* generation requires as many forwards as the number of classes or slots. Although these forward passes are independent, achieving few-shot learning this way is not as effective as directly generating the class or the tag (e.g., *NLU*). In early experiments, we tried to covert all the tasks into a *generative* format, thus making the model directly generate the sequence of tags or the class label. Unfortunately, the results in the *generative* format were poor, but we are unsure if larger LMs such as GPT-3 can perform better.
-* The current max-input length of GPT-2 (1024 tokens) greatly limits the number of shots that can be provided to the model. Indeed, in most of the tasks, no more than 15 shots can be provided, thus making it incomparable with existing models that use a larger number of shots.
+For image data, We verify the interpretability of our cross-modal attention by comparing the attention result with the actual Facial Action Coding Systems (FACS) ([Ekman et al., 1997](https://psycnet.apa.org/record/2005-07386-000), [Basori, 2016](http://www.iaescore.com/journals/index.php/IJECE/article/view/1178), [Ahn and Chung, 2017](http://koreascience.or.kr/article/JAKO201710758145067.pdf)) and we can confirm that our attention captures the necessary regions quite well, although it is sometimes fail to capture several features mentioned on the literatures. 
 
-### Conclusion
-In this short blog, we demonstrate the potential of LM priming few-shot learning in the most common task-oriented dialogue system tasks (NLU, DST, ACT and NLG). Our experiments show that in most of the tasks larger LMs are better few-shot learners, confirming the hypothesis in [Brown TB et.al, ‎2020](https://arxiv.org/pdf/2005.14165.pdf) and, in some cases, they can also achieve similar or better results than the weakest finetuning-based baseline. Finally, we unveil two limitations of the current LM priming few-shot learning the computational cost and the limited word context size.
+For audio signal, we cannot find any reference on how a sound wave looks like for a specific emotion. In general, at the first layer, the sparse attention capture the area with high spectrum value, meaning there is actually a sounds on that particular frequency, and then start to filter out the features and produce a more sparse feature set from one layer to another.
+<br />
 
-### Acknowledgements
-I would like to thanks [Jason Wu](https://jasonwu0731.github.io/) for providing an easy to use code in ToD-BERT and for clarification about the code and tasks, [Baolin Peng](https://scholar.google.com/citations?user=u1CNjgwAAAAJ&hl=zh-CN) for the easy to use repository FewShotNLG and for providing help with the scorer, and [Sumanth Dathathri](https://dathath.github.io/) for the discussion and insight about the limitation of the LM priming few-shots. 
- 
-### Useful Links
-- Github: [https://github.com/andreamad8/TASK-ORIENTED-LM-FEWSHOT](https://github.com/andreamad8/TASK-ORIENTED-LM-FEWSHOT)
-- Paper: [https://arxiv.org/abs/2008.06239](https://arxiv.org/abs/2008.06239)
-- Medium Blog: [https://medium.com/@madottoandrea/language-model-as-few-shot-learner-for-task-oriented-dialogue-systems-db4765796744](https://medium.com/@madottoandrea/language-model-as-few-shot-learner-for-task-oriented-dialogue-systems-db4765796744)
+## Conclusion
+In this work, we first compare and contrast the two-phase pipeline and the fully end-to-end (FE2E) modelling of the multimodal emotion recognition task. Then, we propose our novel multimodal end-to-end sparse model (MESM) to reduce the computational overhead brought by the fully end-to-end model. Additionally, we reorganize two existing datasets to enable fully end-to-end training. The empirical results demonstrate that the FE2E model has an advantage in feature learning and surpasses the current state-of-the-art models that are based on the two-phase pipeline. Furthermore, MESM is able to halve the amount of computation in the feature extraction part compared to FE2E, while maintaining its performance. In our case study, we provide a visualization of the cross-modal attention maps on both visual and acoustic data. It shows that our method can be interpretable, and the cross-modal attention can successfully select important feature points based on different emotion categories. For future work, we believe that incorporating more modalities into the sparse cross-modal attention mechanism is worth exploring since it could potentially enhance the robustness of the sparsity (selection of features). 
+
+## Useful Links
+- Github: [https://github.com/wenliangdai/Multimodal-End2end-Sparse](https://github.com/wenliangdai/Multimodal-End2end-Sparse)
+- Paper: [https://arxiv.org/pdf/2103.09666.pdf](https://arxiv.org/pdf/2103.09666.pdf)
+- Dataset: [https://github.com/wenliangdai/Multimodal-End2end-Sparse](https://github.com/wenliangdai/Multimodal-End2end-Sparse)
