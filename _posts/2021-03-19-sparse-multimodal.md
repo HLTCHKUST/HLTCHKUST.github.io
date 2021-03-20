@@ -66,14 +66,12 @@ pre.code code {
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-Modularized task-oriented dialogues systems are the core of the current smart speaker generation (e.g., [Alexa](https://en.wikipedia.org/wiki/Amazon_Alexa), [Siri](https://en.wikipedia.org/wiki/Siri)  etc.). The main modules of such systems are Natural Language Understanding (NLU), Dialogue State Tracking (DST), Dialogue Policy (DP) and Natural Language Generation (NLG), each of which is trained separately using supervised and/or reinforcement learning. Thus a data collection process is required, which for some of the tasks can be laborious and expensive. For example, dialogue policy annotation has to be done by an expert, better by a professional linguist. Therefore, having a model that requires only few samples to actually perform well in the tasks is essential.  
-
 The existing works in multimodal affective computing tasks, such as emotion recognition, generally adopt a two-phase pipeline. e, first extracting feature representations for each single modality with hand-crafted algorithms and then performing end-to-end learning with the extracted features. This often leads to complication in designing and choosing the best extraction algorithm and sub-optimal performance of the model because of the feature is very sparse and not tunable. In this blog post, we introduce a sparse model that allows end2end learning from raw text, audio, & video altogether with only a single 1080Ti GPU.
 
 <br />
 <br />
 <img class="center"  width="55%" src="/assets/img/IMG.png" alt="...">
-<figcaption>Figure 1. Modules in Task-Oriented Dialogue Systems</figcaption>
+<figcaption>Figure 1. Illustration of feature extraction from hand-crafted model (\textit{left}), fully end-to-end model (\textit{middle}), and sparse end-to-end model (\textit{right}). The red dots represent the keypoints extracted by hand-crafted models. The areas formed by red lines represent the regions of interest that are processed by (sparse) end-to-end models to extract the features.</figcaption>
 <br />
 <br />
 
