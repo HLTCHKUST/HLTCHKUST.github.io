@@ -9,5 +9,5 @@ scholar: https://scholar.google.com/citations?user=jYZwal0AAAAJ&hl=en
 email: mailto:ejs@connect.ust.hk
 personal_url: ejs.student.ust.hk
 importance: 0
-status: current_student
+status: alumni
 ---
