@@ -3,7 +3,7 @@ layout: post
 title: 'Multimodal End-to-End Sparse Model for Emotion Recognition'
 date: 2021-03-19 20:30:00
 author: "Samuel Cahyawijaya"
-description: Existing multimodal solutions incorporate a two-phase pipeline which results in suboptimal performance. We introduces a sparse deep learning model that allows end-to-end learning from raw text, audio, & video altogether with only a single GPU.
+description: Existing multimodal solutions incorporate a two-phase pipeline which results in suboptimal performance. We introduces a sparse deep learning model that allows end-to-end learning from raw text, audio, & video altogether with only a single GPU device.
 ---
 <style>
 
