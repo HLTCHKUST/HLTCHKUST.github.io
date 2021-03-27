@@ -67,6 +67,10 @@ pre.code code {
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+This is a paper accepted in NAACL 2021 [[PDF]](https://arxiv.org/pdf/2103.09666.pdf).
+
+## Introduction
+
 The existing works in multimodal affective computing tasks, such as emotion recognition, generally adopt a two-phase pipeline approach ([Zadeh et al., 2018](https://www.semanticscholar.org/paper/Memory-Fusion-Network-for-Multi-view-Sequential-Zadeh-Liang/609512f19e06bf393cb79fbf57183f75b8d889d2); [Tsai et al., 2018](https://openreview.net/forum?id=rygqqsA9KX), [2019](https://www.semanticscholar.org/paper/Multimodal-Transformer-for-Unaligned-Multimodal-Tsai-Bai/949fef650da4c41afe6049a183b504b3cc91f4bd); [Rahman et al., 2020](https://www.aclweb.org/anthology/2020.acl-main.214/)) which first extracting feature representations for each single modality with hand-crafted algorithms and then performing end-to-end learning with the extracted features. This often leads to complication in designing and choosing the best extraction algorithm and sub-optimal performance of the model because of the feature is very sparse and not tunable. In this blog post, we introduce a sparse model that allows end-to-end learning from raw text, audio, & video altogether with only a single 1080Ti GPU. We compare our proposed method with two different approaches, the first one is the two-phase pipeline model with hand-crafted features and the second one is the fully end-to-end model.
 
 <br />
@@ -98,7 +102,7 @@ In the above figure, we can see that our sparse end-to-end model is divided into
 <figcaption>Figure 3. Cross Modal Sparse CNN Block.</figcaption>
 <br />
 
-Our cross-modal Sparse CNN block consist of two main components which are a [Cross-modal attention](#cross-modal-attention-layer) layer and a [Sparse CNN](#sparse-cnn-layer) layer. Our cross-model attention layer is used to extract the important point on the audio and video modalities and then pass only the remaining points into sparse CNN for further processing. 
+Our cross-modal Sparse CNN block consist of two main components which are a [Cross-modal attention](#cross-modal-attention-layer) layer and a [Sparse CNN](#sparse-cnn-layer) layer. Our cross-model attention layer is used to extract the important point on the audio and video modalities and then pass only the remaining points into sparse CNN for further processing.
 
 <a name="cross-modal-attention-layer"></a>
 <br/>
@@ -111,7 +115,7 @@ Our cross-modal Sparse CNN block consist of two main components which are a [Cro
 <figcaption>Figure 4. Cross-modal Attention Layer.</figcaption>
 <br />
 
-Our cross-modal attention layer is used to filter out unnecessary from audio and video modalities by calculating attention from the  text modality to the audio and video modalities. We utilize additive attention mechanism ([Bahdanau et al., 2015](https://arxiv.org/pdf/1409.0473.pdf)) over a pair of modalities to compute the attention score. From the resulting attention score, we perform nucleus / top-p sampling with a threshold hyperparameter <b>p</b>. 
+Our cross-modal attention layer is used to filter out unnecessary from audio and video modalities by calculating attention from the  text modality to the audio and video modalities. We utilize additive attention mechanism ([Bahdanau et al., 2015](https://arxiv.org/pdf/1409.0473.pdf)) over a pair of modalities to compute the attention score. From the resulting attention score, we perform nucleus / top-p sampling with a threshold hyperparameter <b>p</b>.
 
 We further conduct a deeper analysis to measure the effect of hyperparameter <b>p</b> to the model quality and computational cost required by the model as shown on the following figure
 
@@ -141,8 +145,8 @@ Sparse CNN is introduced by ([Graham et al., 2017](https://arxiv.org/abs/1706.01
 <img class="center" width="90%" src="/assets/img/sparse-mm/results.png" alt="..."/>
 <br />
 
-From the experimental results and ablation study, we observe that: 
-* End-to-end models, both Fully End-to-End (F2E2E) modeland our proposed Multimodal End-to-End Sparse Model (MESM) shows superiority compared to the two-phase pipeline models (LF-LSTM, LF-TRANS, EmoEmbs, and MulT). 
+From the experimental results and ablation study, we observe that:
+* End-to-end models, both Fully End-to-End (F2E2E) modeland our proposed Multimodal End-to-End Sparse Model (MESM) shows superiority compared to the two-phase pipeline models (LF-LSTM, LF-TRANS, EmoEmbs, and MulT).
 * Our MESM achieves slightly lower results compared to the FE2E model, while requiring less than 60% of the F2E2E model computational cost.
 * In two modalities settings, our MESM can achieve a performance that is on par with the FE2Emodel or is even slightly better.
 
@@ -161,13 +165,13 @@ From the experimental results and ablation study, we observe that:
 <figcaption>Figure 8. Cross-modal attention to the mel-spectrum of the audio data. </figcaption>
 <br />
 
-For image data, We verify the interpretability of our cross-modal attention by comparing the attention result with the actual Facial Action Coding Systems (FACS) ([Ekman et al., 1997](https://psycnet.apa.org/record/2005-07386-000), [Basori, 2016](http://www.iaescore.com/journals/index.php/IJECE/article/view/1178), [Ahn and Chung, 2017](http://koreascience.or.kr/article/JAKO201710758145067.pdf)) and we can confirm that our attention captures the necessary regions quite well, although it is sometimes fail to capture several features mentioned on the literatures. 
+For image data, We verify the interpretability of our cross-modal attention by comparing the attention result with the actual Facial Action Coding Systems (FACS) ([Ekman et al., 1997](https://psycnet.apa.org/record/2005-07386-000), [Basori, 2016](http://www.iaescore.com/journals/index.php/IJECE/article/view/1178), [Ahn and Chung, 2017](http://koreascience.or.kr/article/JAKO201710758145067.pdf)) and we can confirm that our attention captures the necessary regions quite well, although it is sometimes fail to capture several features mentioned on the literatures.
 
 For audio signal, we cannot find any reference on how a sound wave looks like for a specific emotion. In general, at the first layer, the sparse attention capture the area with high spectrum value, meaning there is actually a sounds on that particular frequency, and then start to filter out the features and produce a more sparse feature set from one layer to another.
 <br />
 
 ## Conclusion
-In this work, we first compare and contrast the two-phase pipeline and the fully end-to-end (FE2E) modelling of the multimodal emotion recognition task. Then, we propose our novel multimodal end-to-end sparse model (MESM) to reduce the computational overhead brought by the fully end-to-end model. Additionally, we reorganize two existing datasets to enable fully end-to-end training. The empirical results demonstrate that the FE2E model has an advantage in feature learning and surpasses the current state-of-the-art models that are based on the two-phase pipeline. Furthermore, MESM is able to halve the amount of computation in the feature extraction part compared to FE2E, while maintaining its performance. In our case study, we provide a visualization of the cross-modal attention maps on both visual and acoustic data. It shows that our method can be interpretable, and the cross-modal attention can successfully select important feature points based on different emotion categories. For future work, we believe that incorporating more modalities into the sparse cross-modal attention mechanism is worth exploring since it could potentially enhance the robustness of the sparsity (selection of features). 
+In this work, we first compare and contrast the two-phase pipeline and the fully end-to-end (FE2E) modelling of the multimodal emotion recognition task. Then, we propose our novel multimodal end-to-end sparse model (MESM) to reduce the computational overhead brought by the fully end-to-end model. Additionally, we reorganize two existing datasets to enable fully end-to-end training. The empirical results demonstrate that the FE2E model has an advantage in feature learning and surpasses the current state-of-the-art models that are based on the two-phase pipeline. Furthermore, MESM is able to halve the amount of computation in the feature extraction part compared to FE2E, while maintaining its performance. In our case study, we provide a visualization of the cross-modal attention maps on both visual and acoustic data. It shows that our method can be interpretable, and the cross-modal attention can successfully select important feature points based on different emotion categories. For future work, we believe that incorporating more modalities into the sparse cross-modal attention mechanism is worth exploring since it could potentially enhance the robustness of the sparsity (selection of features).
 
 ## Useful Links
 - Github: [https://github.com/wenliangdai/Multimodal-End2end-Sparse](https://github.com/wenliangdai/Multimodal-End2end-Sparse)
