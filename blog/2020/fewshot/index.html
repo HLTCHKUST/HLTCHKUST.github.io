@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>NLP  @ CAiRE | Language Model as Few-Shot Learners for Task-Oriented Dialogue Systems</title>
+<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/blog/2020/fewshot/">
+
+<!-- Theming-->
+
+
+
+
+    
+<!-- MathJax -->
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       <span class="font-weight-bold">NLP</span>   @ CAiRE
+      </a>
+      
+      <!-- Navbar Toogle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/blog/">
+              Blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/team/">
+                
+                Team
+                
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/demos/">
+                
+                Demos
+                
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                
+                  Publications
+                
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<style type="text/css">
+  h1 {
+    font-weight: 500;
+  }
+
+  h2 {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  h3 {
+    margin-top: 18px;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+</style>
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Language Model as Few-Shot Learners for Task-Oriented Dialogue Systems</h1>
+    <p class="post-meta">August 10, 2020 • Andrea Madotto</p>
+  </header>
+
+  <article class="post-content">
+    <style>
+
+figcaption {
+  /* background-color: black;
+  color: white; */
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 70%; */
+}
+/* CSS Simple Pre Code */
+pre {
+    background: rgba(197, 225, 184, 0.2);
+    /* white-space: pre; */
+    /* word-wrap: break-word; */
+    overflow: auto;
+}
+
+pre.code {
+    /* margin: 1px 1px; */
+    /* border-radius: 2px; */
+    /* border: 1px solid #FDF1DD; */
+    position: relative;
+}
+
+pre.code label {
+    /* font-family: sans-serif; */
+    /* font-weight: bold; */
+    font-size: 13px;
+    /* color: #ddd; */
+    position: absolute;
+    left: 12px;
+    top: 9.5px;
+    text-align: center;
+    width: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+pre.code code {
+    font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
+    display: block;
+    margin: 0 0 0 25px;
+    /* padding: 1px 16px 14px; */
+    /* border-left: 1px solid #555; */
+    overflow-x: auto;
+    /* font-size: 13px; */
+    /* line-height: 19px; */
+    /* color: #ddd; */
+}
+
+
+
+
+</style>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<p>Modularized task-oriented dialogues systems are the core of the current smart speaker generation (e.g., <a href="https://en.wikipedia.org/wiki/Amazon_Alexa">Alexa</a>, <a href="https://en.wikipedia.org/wiki/Siri">Siri</a>  etc.). The main modules of such systems are Natural Language Understanding (NLU), Dialogue State Tracking (DST), Dialogue Policy (DP) and Natural Language Generation (NLG), each of which is trained separately using supervised and/or reinforcement learning. Thus a data collection process is required, which for some of the tasks can be laborious and expensive. For example, dialogue policy annotation has to be done by an expert, better by a professional linguist. Therefore, having a model that requires only few samples to actually perform well in the tasks is essential.<br />
+<br />
+<br />
+<img class="center" width="55%" src="/assets/img/IMG.png" alt="..." /></p>
+<figcaption>Figure 1. Modules in Task-Oriented Dialogue Systems</figcaption>
+<p><br />
+<br /></p>
+
+<p>The most successful approach in few-shot learning for task-oriented dialogue systems is notably <a href="https://en.wikipedia.org/wiki/Transfer_learning">transfer learning</a>, where a large model is firstly pre-trained on a large corpus to be then fine-tuned on specific tasks. For task-oriented dialogue systems, <a href="https://arxiv.org/abs/2004.06871">Wu et. al 2020</a> proposed <a href="https://github.com/jasonwu0731/ToD-BERT">TOD-BERT</a> a large pre-trained model which can achieve better performance than <a href="https://arxiv.org/abs/1810.04805">BERT</a> in few-shots NLU, DST and DP. <a href="https://arxiv.org/pdf/2004.11727.pdf">Liu et. al. 2019</a> proposed a two-step classification for few-shot slot-filling, a key task for the NLU module. Similarly, <a href="https://arxiv.org/pdf/2002.12328.pdf">Peng et. al. 2020</a> introduced a benchmark for few-shot NLG and a pre-trained language model (<a href="https://github.com/pengbaolin/SC-GPT">SC-GPT</a>) specialized for the task. Further, a template rewriting schema based on
+T5 (<a href="https://arxiv.org/abs/1910.10683">Raffel et al., 2019</a>) was developed by <a href="https://arxiv.org/pdf/2004.15006v1.pdf">Kale et.al. 2020</a> for few-shot NLG in two well-known datasets. <a href="https://arxiv.org/abs/2005.05298">Peng et. al. 2020</a> proposed a pre-trained language model (LM) for end-to-end pipe-lined task-oriented dialogue systems. In their experiments they showed promising few-shot learning performance in MWoZ (<a href="https://arxiv.org/abs/1810.00278">Budzianowski et al., 2018</a>).</p>
+
+<p><br />
+<br />
+<img class="center" width="35%" src="/assets/img/few_shot.png" alt="..." /></p>
+<figcaption>Figure 2. Language Model priming for few-shot intent recognition. Image inspired by OpenAI GPT-3 (Brown TB et.al, ‎2020)</figcaption>
+<p><br />
+<br /></p>
+
+<p>For performing few-shot learning, existing methods require a set of task-specific parameters since the model is fine-tuned with few samples. Differently, in this paper, we perform few-shot learning by priming LMs with few-examples (<a href="https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf">Radford, et.al. 2018</a>, <a href="https://arxiv.org/pdf/2005.14165.pdf">Brown TB et.al, ‎2020</a>). In this setting, <strong>NO</strong> parameters are updated, thus allowing a single model to perform multiple tasks at the same time. In this blog, we evaluate the few-shot ability of LM priming on the four task-oriented tasks previously mentioned (i.e., NLU, DST, DP, and NLG).</p>
+
+<p><br />
+Currently, GPT-3 is not available to the public, or at least not to us now 🙈; thus we experiment on different sizes GPT-2 models such as SMALL (117M), LARGE (762M), and XL (1.54B). All the experiments are run on a single NVIDIA 1080Ti GPU.</p>
+
+<h3 id="priming-the-lm-for-few-shot-learning">Priming the LM for few-shot learning</h3>
+<p>Differently from fine-tuning, few-shot learning with LMs requires designing prefixes to perform few-shot learning (<a href="https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf">Radford, et.al. 2018</a>, <a href="https://arxiv.org/pdf/2005.14165.pdf">Brown TB et.al, ‎2020</a>). These prefixes are provided to the LM and the generate token become the actual prediction, Figure 2 shows an example for the intent recognition task. In our four tasks, we use three categories of prefixes: <em>binary</em>, <em>value-based</em> and <em>generative</em> –<a href="https://arxiv.org/abs/2008.06239">check the main paper for more information</a>–. We use different prefix styles depending on the task and we compare the results of LM few-shot priming with those of the existing finetuning-base models. In all the experiments, we use different number of shots since different tasks may fit more or fewer samples in the 1024 max input size of GPT-2.</p>
+
+<h4 id="nlu">NLU</h4>
+<p>We use the SNIPS (<a href="https://arxiv.org/abs/1805.10190">Coucke et al., 2018</a>) dataset for evaluating the <em>SLOT-FILLING</em> and <em>INTENT</em> recognition tasks. For the <em>SLOT-FILLING</em> task, we follow the few-shot setting of <a href="https://arxiv.org/pdf/2004.11727.pdf">Liu et. al. 2019</a>, and we use the official CoNLL F1 scorer as the evaluation metric. For the <em>INTENT</em> classification, we fine-tune RoBERTa (<a href="https://arxiv.org/abs/1907.11692">Liu et al. 2019</a>) with 10 samples and use accuracy as the evaluation metric. We use a <em>value-based</em> LM prefix for the <em>SLOT-FILLING</em> task with a maximum of 15 shots, and <em>binary</em> LM prefix for the <em>INTENT</em> classification task with a maximum of 10 shots. An example of a prefix for the two tasks and the few-shot performance evaluation are shown in the Figure below.</p>
+
+<pre class="code code-css">
+    <label>SLOT-FILLING</label>
+    <code>add tune to my hype playlist =&gt; entity_name = none\n
+add to playlist confidence boost here comes =&gt; entity_name = here comes \n
+add the track bg knocc out to the rapcaviar playlist =&gt; entity_name =</code>
+  </pre>
+<pre class="code code-css">
+    <label>INTENT</label>
+    <code>listen to westbam alumb allergic on google music =&gt; playmusic = true\n 
+rate this novel 4 points out of 6 =&gt; playmusic = false\n
+add sabrina salerno to the grime instrumentals playlist =&gt; playmusic =</code>
+  </pre>
+<p><br />
+<img class="center" width="96%" src="/assets/img/NLU.png" alt="..." />
+<!-- <img class="center" width="50%" src="/assets/img/INTENT.png" alt="..."> --></p>
+
+<h4 id="dst">DST</h4>
+<p>We use the MultiWoZ (<a href="https://arxiv.org/abs/1810.00278">Budzianowski et al., 2018</a>) dataset for evaluating the <em>DST</em> task. Differently from other works, we use the last user utterance only as input to the model, and we update the predicted-DST through turns. For the few-shot evaluation, we follow the setting of <a href="https://arxiv.org/abs/2004.06871">Wu et. al 2020</a>, and we report the joint and slot accuracy. As baselines, we use <a href="https://github.com/jasonwu0731/ToD-BERT">TOD-BERT</a> and <a href="https://arxiv.org/abs/1810.04805">BERT</a> fine-tuned with 10% of the training data, which is equivalent to 500 examples. We use a <em>value-based</em> LM prefix, as for the <em>SLOT-FILLING</em> task, with a maximum of 15 shots due to limited context. An example of a prefix and the few-shot performance evaluation are shown in the Figure below.</p>
+
+<pre class="code code-css">
+    <label>DST</label>
+    <code>i need a cab by 12:30 too the contact # and car type will be most helpful =&gt; leave_at = 12:30 \n
+i would like the taxi to pick me up from the hotel . i need to be at the restaurant at 18:30 . =&gt; leave_at = none\n
+i would like a taxi from saint john s college to pizza hut fen ditton . =&gt; leave_at =</code>
+  </pre>
+<p><img class="center" width="100%" src="/assets/img/DST.png" alt="..." /></p>
+
+<h4 id="act">ACT</h4>
+<p>We use the MultiWoZ (<a href="https://arxiv.org/abs/1810.00278">Budzianowski et al., 2018</a>)  dataset for evaluating the speech <em>ACT</em> identification task. Differently from other works, only the system utterance is used as input to the model, instead of including the dialogue history and the user utterance as in <a href="https://arxiv.org/abs/2004.06871">Wu et. al 2020</a>. For the few-shot evaluation, we follow the setting of <a href="https://arxiv.org/abs/2004.06871">Wu et. al 2020</a>, i.e., F1-score. As baselines, we use <a href="https://github.com/jasonwu0731/ToD-BERT">TOD-BERT</a> and <a href="https://arxiv.org/abs/1810.04805">BERT</a>, fine-tuned with 10% of the training data, which is equivalent to 500 examples. We use a <em>binary</em> LM prefix, as for the intent classification task, with a maximum of 15 shots due to limited context. An example of a prefix and the few-shot performance evaluation are shown in the Figure below.</p>
+
+<pre class="code code-css">
+    <label>ACT</label>
+    <code>yes your booking is successful and your reference number is ri4vvzyc . =&gt; offerbooked = true\n
+what type of food are you looking for ? =&gt; offerbooked = false \n
+i do not seem to be finding anything called nusha . what type of food does the restaurant serve ? =&gt; offerbooked =</code>
+  </pre>
+<p><img class="center" width="60%" src="/assets/img/ACT.png" alt="..." /></p>
+
+<h4 id="nlg">NLG</h4>
+<p>We use the FewShotWOZ (<a href="https://arxiv.org/pdf/2002.12328.pdf">Peng et. al. 2020</a>) dataset for evaluating the <em>NLG</em> task. For the few-shot evaluation, we follow the setting of <a href="https://arxiv.org/pdf/2002.12328.pdf">Peng et. al. 2020</a> and use the BLEU and slot error rate (SLR) as metrics. We use SC-LSTM, GPT-2, and SC-GPT-2 (<a href="https://arxiv.org/pdf/2002.12328.pdf">Peng et. al. 2020</a>) as baselines, all fine-tuned with 50 examples from the training data. We use a <em>generative</em> LM prefix with a maximum of 20 shots due to limited context. An example of a prefix and the few-shot performance evaluation are shown in the Figure below.</p>
+
+<pre class="code code-css">
+    <label>NLG</label>
+    <code>inform(name='hilton san francisco financial district';area='chinatown') =&gt; the hilton san francisco financial district is near chinatown\n
+inform(name='ocean park motel';dogsallowed='none';phone='4155667020') =&gt; the phone number for ocean park motel is 4155667020 . no dogs are allowed there \n
+inform(name='super 8 san francisco';phone='8005369326') =&gt;</code>
+  </pre>
+<p><img class="center" width="100%" src="/assets/img/NLG.png" alt="..." /></p>
+
+<h3 id="analysis-and-limitation">Analysis and Limitation</h3>
+<p>From the experimental results, we observe that:</p>
+<ul>
+  <li>The larger the model the better the performance in both the <em>NLU</em> and <em>NLG</em> tasks, while, instead, in the <em>DST</em> and <em>ACT</em> tasks, GPT-2 LARGE (762M) performs better than the XL (1.54B) version. This is quite counterintuitive given the results reported for GPT-3. Further investigation is required to understand whether changing the prefix can help to improve the performance of larger models;</li>
+  <li>In the <em>NLU</em>, <em>ACT</em> and <em>NLG</em>, LM priming few-shot learning shows promising results, achieving similar or better performance than the weakest finetuning-based baseline, which also uses a larger number of shots. On the other hand, in <em>DST</em> the gap with the existing baseline is still large.</li>
+</ul>
+
+<p><br />
+We also observe two limitations of the LM priming:</p>
+<ul>
+  <li>Using <em>binary</em> and <em>value-based</em> generation requires as many forwards as the number of classes or slots. Although these forward passes are independent, achieving few-shot learning this way is not as effective as directly generating the class or the tag (e.g., <em>NLU</em>). In early experiments, we tried to covert all the tasks into a <em>generative</em> format, thus making the model directly generate the sequence of tags or the class label. Unfortunately, the results in the <em>generative</em> format were poor, but we are unsure if larger LMs such as GPT-3 can perform better.</li>
+  <li>The current max-input length of GPT-2 (1024 tokens) greatly limits the number of shots that can be provided to the model. Indeed, in most of the tasks, no more than 15 shots can be provided, thus making it incomparable with existing models that use a larger number of shots.</li>
+</ul>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>In this short blog, we demonstrate the potential of LM priming few-shot learning in the most common task-oriented dialogue system tasks (NLU, DST, ACT and NLG). Our experiments show that in most of the tasks larger LMs are better few-shot learners, confirming the hypothesis in <a href="https://arxiv.org/pdf/2005.14165.pdf">Brown TB et.al, ‎2020</a> and, in some cases, they can also achieve similar or better results than the weakest finetuning-based baseline. Finally, we unveil two limitations of the current LM priming few-shot learning the computational cost and the limited word context size.</p>
+
+<h3 id="acknowledgements">Acknowledgements</h3>
+<p>I would like to thanks <a href="https://jasonwu0731.github.io/">Jason Wu</a> for providing an easy to use code in ToD-BERT and for clarification about the code and tasks, <a href="https://scholar.google.com/citations?user=u1CNjgwAAAAJ&amp;hl=zh-CN">Baolin Peng</a> for the easy to use repository FewShotNLG and for providing help with the scorer, and <a href="https://dathath.github.io/">Sumanth Dathathri</a> for the discussion and insight about the limitation of the LM priming few-shots.</p>
+
+<h3 id="useful-links">Useful Links</h3>
+<ul>
+  <li>Github: <a href="https://github.com/andreamad8/TASK-ORIENTED-LM-FEWSHOT">https://github.com/andreamad8/TASK-ORIENTED-LM-FEWSHOT</a></li>
+  <li>Paper: <a href="https://arxiv.org/abs/2008.06239">https://arxiv.org/abs/2008.06239</a></li>
+  <li>Medium Blog: <a href="https://medium.com/@madottoandrea/language-model-as-few-shot-learner-for-task-oriented-dialogue-systems-db4765796744">https://medium.com/@madottoandrea/language-model-as-few-shot-learner-for-task-oriented-dialogue-systems-db4765796744</a></li>
+</ul>
+
+  </article>
+
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2021 NLP  @ CAiRE.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+<!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+</html>

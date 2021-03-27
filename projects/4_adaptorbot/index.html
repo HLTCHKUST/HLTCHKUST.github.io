@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>NLP  @ CAiRE | NLP @ CAiRE</title>
+<title>NLP  @ CAiRE | Adapter-Bot</title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -29,7 +29,7 @@
 <link rel="shortcut icon" href="/assets/img/favicon.ico">
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/4_adaptorbot/">
 
 <!-- Theming-->
 
@@ -76,7 +76,7 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               Blog
               
@@ -143,38 +143,28 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <!-- <h1>CAiRE Blogs</h1> -->
-    <h2>Blog Posts</h2>
-    <!-- <h3 style="font-size: 20px; font-weight: 400;">“There can’t be beauty and utility? “ - Leonardo da Vinci</h3> -->
-    <h3 style="font-size: 18px; font-weight: 400;">Check out the posts about our current and previous works!</h3>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Adapter-Bot</h1>
+    <p class="post-description">Adapter-Bot provides on-demend dialogue skills (e.g., emphatic response, weather information, movie recommendation) via different adapters.</p>
+  </header>
 
+  <article>
+    <p>Original Paper: <a href="https://arxiv.org/pdf/2008.12579.pdf" target="_blank"><i class="far fa-fw fa-file"></i></a></p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/sparse-multimodal/">Multimodal End-to-End Sparse Model for Emotion Recognition</a></h3>
-        <p class="post-meta">March 20, 2021 • Samuel Cahyawijaya</p>
-        <p>Existing multimodal solutions incorporate a two-phase pipeline which results in suboptimal performance. We introduces a sparse deep learning model that allows end-to-end learning from raw text, audio, & video altogether with only a single GPU device.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/crossner/">CrossNER: Evaluating Cross-Domain Named Entity Recognition</a></h3>
-        <p class="post-meta">December 16, 2020 • Zihan Liu</p>
-        <p>This blog highlights the motivation of cross-domain NER, introduces a newly collected CrossNER dataset, and provides an analysis of domain-adaptive pre-training methods for the cross-domain NER task. Finally, we discuss the potential research directions on the NER domain adaptation task.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/fewshot/">Language Model as Few-Shot Learners for Task-Oriented Dialogue Systems</a></h3>
-        <p class="post-meta">August 10, 2020 • Andrea Madotto</p>
-        <p>Evaluating the Few-Shot ability of Language Models in Task-Oriented Dialogue Systems</p>
-      </li>
-    
-  </ul>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/adaptorbot.png" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    The Adapter-Bot: All-In-One Controllable Conversational Model
+</div>
 
-  
+<p>Considerable progress has been made towards conversational models that generate coherent and fluent responses by training large language models on large dialogue datasets. These models have little or no control of the generated responses and miss two important features: continuous dialogue skills integration and seamlessly leveraging diverse knowledge sources. In this paper, we propose the Adapter-Bot, a dialogue model that uses a fixed backbone conversational model such as DialGPT (Zhang et al., 2019) and triggers on-demand dialogue skills (e.g., emphatic response, weather information, movie recommendation) via different adapters (Houlsby et al., 2019). Each adapter can be trained independently, thus allowing a continual integration of skills without retraining the entire model. Depending on the skills, the model is able to process multiple knowledge types, such as text, tables, and graphs, in a seamless manner. The dialogue skills can be triggered automatically via a dialogue manager, or manually, thus allowing high-level control of the generated responses. At the current stage, we have implemented 12 response styles (e.g., positive, negative etc.), 8 goal-oriented skills (e.g. weather information, movie recommendation, etc.), and personalized and emphatic responses. We evaluate our model using automatic evaluation by comparing it with existing state-of-the-art conversational models, and we have released an interactive system at <a href="https://adapterbot.emos.ai/" target="_blank">here</a></p>
 
+<p>Demo video at <a href="https://youtu.be/Jz8KWE_gKH0" target="_blank">here</a>.</p>
+
+  </article>
 
 </div>
 

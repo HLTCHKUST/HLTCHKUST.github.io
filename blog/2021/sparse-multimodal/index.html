@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>NLP  @ CAiRE | Multimodal End-to-End Sparse Model for Emotion Recognition</title>
+<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<link rel="canonical" href="/blog/2021/sparse-multimodal/">
+
+<!-- Theming-->
+
+
+
+
+    
+<!-- MathJax -->
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/">
+       <span class="font-weight-bold">NLP</span>   @ CAiRE
+      </a>
+      
+      <!-- Navbar Toogle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              About
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/blog/">
+              Blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/team/">
+                
+                Team
+                
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/demos/">
+                
+                Demos
+                
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                
+                  Publications
+                
+                
+              </a>
+          </li>
+          
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<style type="text/css">
+  h1 {
+    font-weight: 500;
+  }
+
+  h2 {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  h3 {
+    margin-top: 18px;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+</style>
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Multimodal End-to-End Sparse Model for Emotion Recognition</h1>
+    <p class="post-meta">March 20, 2021 • Samuel Cahyawijaya</p>
+  </header>
+
+  <article class="post-content">
+    <style>
+
+figcaption {
+  /* background-color: black;
+  color: white; */
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 70%; */
+}
+/* CSS Simple Pre Code */
+pre {
+    background: rgba(197, 225, 184, 0.2);
+    /* white-space: pre; */
+    /* word-wrap: break-word; */
+    overflow: auto;
+}
+
+pre.code {
+    /* margin: 1px 1px; */
+    /* border-radius: 2px; */
+    /* border: 1px solid #FDF1DD; */
+    position: relative;
+}
+
+pre.code label {
+    /* font-family: sans-serif; */
+    /* font-weight: bold; */
+    font-size: 13px;
+    /* color: #ddd; */
+    position: absolute;
+    left: 12px;
+    top: 9.5px;
+    text-align: center;
+    width: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+pre.code code {
+    font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
+    display: block;
+    margin: 0 0 0 25px;
+    /* padding: 1px 16px 14px; */
+    /* border-left: 1px solid #555; */
+    overflow-x: auto;
+    /* font-size: 13px; */
+    /* line-height: 19px; */
+    /* color: #ddd; */
+}
+
+</style>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+<script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<p>This is a paper accepted in NAACL 2021 <a href="https://arxiv.org/pdf/2103.09666.pdf">[PDF]</a>.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The existing works in multimodal affective computing tasks, such as emotion recognition, generally adopt a two-phase pipeline approach (<a href="https://www.semanticscholar.org/paper/Memory-Fusion-Network-for-Multi-view-Sequential-Zadeh-Liang/609512f19e06bf393cb79fbf57183f75b8d889d2">Zadeh et al., 2018</a>; <a href="https://openreview.net/forum?id=rygqqsA9KX">Tsai et al., 2018</a>, <a href="https://www.semanticscholar.org/paper/Multimodal-Transformer-for-Unaligned-Multimodal-Tsai-Bai/949fef650da4c41afe6049a183b504b3cc91f4bd">2019</a>; <a href="https://www.aclweb.org/anthology/2020.acl-main.214/">Rahman et al., 2020</a>) which first extracting feature representations for each single modality with hand-crafted algorithms and then performing end-to-end learning with the extracted features. This often leads to complication in designing and choosing the best extraction algorithm and sub-optimal performance of the model because of the feature is very sparse and not tunable. In this blog post, we introduce a sparse model that allows end-to-end learning from raw text, audio, &amp; video altogether with only a single 1080Ti GPU. We compare our proposed method with two different approaches, the first one is the two-phase pipeline model with hand-crafted features and the second one is the fully end-to-end model.</p>
+
+<p><br />
+<br />
+<img class="center" width="55%" src="/assets/img/sparse-mm/highlight.jpg" alt="..." /></p>
+<figcaption>Figure 1. Illustration of feature extraction from hand-crafted model <b>(left)</b>, fully end-to-end model <b>(middle)</b>, and sparse end-to-end model <b>(right)</b>. The red dots represent the keypoints extracted by hand-crafted models. The areas formed by red lines represent the regions of interest that are processed by (sparse) end-to-end models to extract the features.</figcaption>
+<p><br />
+<br /></p>
+
+<p>As shown on the figure above, hand-crafted algorithm such as <a href="https://github.com/TadasBaltrusaitis/OpenFace">OpenFace</a> and <a href="https://opencv.org/">OpenCV</a> only capture a small set of keypoints and extract higher level features from the relation between those points. This might produce a fine-grained intuitive representation, although it might not capture all the required points and difficult to be updated, as it needs to be manually tuned. On the contrary, fully end-to-end (FE2E) models enable us to consider all the points in order to extract higher level features. This makes a fully end-to-end model the exact opposite of hand-crafted algorithm, as it might not produce a very intuitive representation but it can capture all the points needed and the model can adjust which point to extract according to the goal of the task. In terms of computation resources, fully end-to-end model generally requires more computation than the hand-crafted counterpart as it takes into account all the points in the image. We try to take both advantage from both methods and invent Multimodal End-to-end Sparse Model (MESM) that not only use less computation than end-to-end model, but also provides an intuitive explaination of what feature is extracted from a given image. We utilize convolution neural network (CNN), <a href="https://github.com/facebookresearch/SparseConvNet">Sparse CNN</a> and <a href="https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf">Transformer</a> as the backbone of our model. The architecture of our sparse end-to-end model is shown on the following figure:</p>
+
+<p><br />
+<br />
+<img class="center" width="95%" src="/assets/img/sparse-mm/main_model.jpg" alt="..." /></p>
+<figcaption>Figure 2. Architecture of our Multimodal End-to-end Sparse Model (MESM). On the left, we show the general architecture flow.  In the middle and on the right, we exhibit the details of the cross-modal sparse CNN block,especially the cross-modal attention layer, which is the key to making the CNN model sparse.</figcaption>
+<p><br />
+<br /></p>
+
+<p>In the above figure, we can see that our sparse end-to-end model is divided into 3 main pathways, one for each modality. For text modality, we encode the text with subword tokenization and feed the tokens into a transformer model. For audio and video signal, we use a single layer 2D convolution neural network (CNN) to extract low level features from the image and perform feature extraction with 3 layers of <a href="#cross-modal-sparse-cnn">Cross-modal Sparse CNN block</a> and then feed the extracted features into a small transformer model. To generate the final prediction, we first standardize the feature dimension for all modalities with a feed-forward network and then we combine all of the features with a multimodal fusion layer, which calculate the linear combination from all the extracted features for each predicted class.</p>
+
+<p><a name="cross-modal-sparse-cnn"></a>
+<br />
+<br /></p>
+
+<h2 id="cross-modal-sparse-cnn">Cross-modal Sparse CNN</h2>
+
+<p><br />
+<img class="center" width="40%" src="/assets/img/sparse-mm/cross-modal-sparse-cnn-block.png" alt="..." /></p>
+<figcaption>Figure 3. Cross Modal Sparse CNN Block.</figcaption>
+<p><br /></p>
+
+<p>Our cross-modal Sparse CNN block consist of two main components which are a <a href="#cross-modal-attention-layer">Cross-modal attention</a> layer and a <a href="#sparse-cnn-layer">Sparse CNN</a> layer. Our cross-model attention layer is used to extract the important point on the audio and video modalities and then pass only the remaining points into sparse CNN for further processing.</p>
+
+<p><a name="cross-modal-attention-layer"></a>
+<br />
+<br /></p>
+
+<h4 id="cross-modal-attention">Cross-modal attention</h4>
+
+<p><br />
+<img class="center" width="20%" src="/assets/img/sparse-mm/cross-modal-attention.png" alt="..." /></p>
+<figcaption>Figure 4. Cross-modal Attention Layer.</figcaption>
+<p><br /></p>
+
+<p>Our cross-modal attention layer is used to filter out unnecessary from audio and video modalities by calculating attention from the  text modality to the audio and video modalities. We utilize additive attention mechanism (<a href="https://arxiv.org/pdf/1409.0473.pdf">Bahdanau et al., 2015</a>) over a pair of modalities to compute the attention score. From the resulting attention score, we perform nucleus / top-p sampling with a threshold hyperparameter <b>p</b>.</p>
+
+<p>We further conduct a deeper analysis to measure the effect of hyperparameter <b>p</b> to the model quality and computational cost required by the model as shown on the following figure</p>
+
+<p><br />
+<img class="center" width="90%" src="/assets/img/sparse-mm/top-p.jpg" alt="..." /></p>
+
+<p><a name="sparse-cnn-layer"></a>
+<br />
+<br /></p>
+
+<h4 id="sparse-cnn">Sparse CNN</h4>
+<p>Sparse CNN is introduced by (<a href="https://arxiv.org/abs/1706.01307">Graham et al., 2017</a>, <a href="https://arxiv.org/abs/1711.10275">2018</a>). Sparse CNN is specifically made to avoid unnecessary computation in a sparse tensor that will happen when we use a traditional CNN layer. The following figure shows the different between a traditional CNN layer and a sparse CNN layer. <small>* image is taken from https://github.com/facebookresearch/SparseConvNet</small></p>
+
+<p><br />
+<img class="center" width="30%" src="https://raw.githubusercontent.com/facebookresearch/SparseConvNet/master/img/i.gif" alt="..." />
+<br />
+<img class="center" width="30%" src="https://raw.githubusercontent.com/facebookresearch/SparseConvNet/master/img/img.gif" alt="..." /></p>
+<figcaption>Figure 6. Traditional CNN (top) vs Sparse CNN (bottom)</figcaption>
+<p><br /></p>
+
+<h2 id="results--analysis">Results &amp; Analysis</h2>
+
+<p><small>* We run our end-to-end experiment in 2 datasets, IEMOCAP &amp; CMU-MOSEI, but as some of the raw data from the provided original dataset has been removed, we reorganize the dataset and generate a new dataset split for both datasets. Please go to <a href="https://www.semanticscholar.org/paper/Multimodal-End-to-End-Sparse-Model-for-Emotion-Dai-Cahyawijaya/3e90244d0594e36a7c8895eba84cbeba942f3186">our paper</a> for more detail about the dataset reorganization and the setup of our experiment</small></p>
+
+<p><br />
+<img class="center" width="90%" src="/assets/img/sparse-mm/results.png" alt="..." />
+<br /></p>
+
+<p>From the experimental results and ablation study, we observe that:</p>
+<ul>
+  <li>End-to-end models, both Fully End-to-End (F2E2E) modeland our proposed Multimodal End-to-End Sparse Model (MESM) shows superiority compared to the two-phase pipeline models (LF-LSTM, LF-TRANS, EmoEmbs, and MulT).</li>
+  <li>Our MESM achieves slightly lower results compared to the FE2E model, while requiring less than 60% of the F2E2E model computational cost.</li>
+  <li>In two modalities settings, our MESM can achieve a performance that is on par with the FE2Emodel or is even slightly better.</li>
+</ul>
+
+<p><br />
+<img class="center" width="30%" src="/assets/img/sparse-mm/ablation.png" alt="..." />
+<br /></p>
+
+<h2 id="case-study">Case Study</h2>
+<p><br />
+<img class="center" width="90%" src="/assets/img/sparse-mm/case_study_new.jpg" alt="..." /></p>
+<figcaption>Figure 7. Cross-modal attention to the face region of the image data</figcaption>
+<p><br /></p>
+
+<p><br />
+<img class="center" width="90%" src="/assets/img/sparse-mm/audio_appendix.jpg" alt="..." /></p>
+<figcaption>Figure 8. Cross-modal attention to the mel-spectrum of the audio data. </figcaption>
+<p><br /></p>
+
+<p>For image data, We verify the interpretability of our cross-modal attention by comparing the attention result with the actual Facial Action Coding Systems (FACS) (<a href="https://psycnet.apa.org/record/2005-07386-000">Ekman et al., 1997</a>, <a href="http://www.iaescore.com/journals/index.php/IJECE/article/view/1178">Basori, 2016</a>, <a href="http://koreascience.or.kr/article/JAKO201710758145067.pdf">Ahn and Chung, 2017</a>) and we can confirm that our attention captures the necessary regions quite well, although it is sometimes fail to capture several features mentioned on the literatures.</p>
+
+<p>For audio signal, we cannot find any reference on how a sound wave looks like for a specific emotion. In general, at the first layer, the sparse attention capture the area with high spectrum value, meaning there is actually a sounds on that particular frequency, and then start to filter out the features and produce a more sparse feature set from one layer to another.
+<br /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>In this work, we first compare and contrast the two-phase pipeline and the fully end-to-end (FE2E) modelling of the multimodal emotion recognition task. Then, we propose our novel multimodal end-to-end sparse model (MESM) to reduce the computational overhead brought by the fully end-to-end model. Additionally, we reorganize two existing datasets to enable fully end-to-end training. The empirical results demonstrate that the FE2E model has an advantage in feature learning and surpasses the current state-of-the-art models that are based on the two-phase pipeline. Furthermore, MESM is able to halve the amount of computation in the feature extraction part compared to FE2E, while maintaining its performance. In our case study, we provide a visualization of the cross-modal attention maps on both visual and acoustic data. It shows that our method can be interpretable, and the cross-modal attention can successfully select important feature points based on different emotion categories. For future work, we believe that incorporating more modalities into the sparse cross-modal attention mechanism is worth exploring since it could potentially enhance the robustness of the sparsity (selection of features).</p>
+
+<h2 id="useful-links">Useful Links</h2>
+<ul>
+  <li>Github: <a href="https://github.com/wenliangdai/Multimodal-End2end-Sparse">https://github.com/wenliangdai/Multimodal-End2end-Sparse</a></li>
+  <li>Paper: <a href="https://arxiv.org/pdf/2103.09666.pdf">https://arxiv.org/pdf/2103.09666.pdf</a></li>
+  <li>Dataset: <a href="https://github.com/wenliangdai/Multimodal-End2end-Sparse">https://github.com/wenliangdai/Multimodal-End2end-Sparse</a></li>
+</ul>
+
+  </article>
+
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2021 NLP  @ CAiRE.
+    Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+<!-- Load DarkMode JS -->
+<script src="/assets/js/dark_mode.js"></script>
+
+
+</html>
